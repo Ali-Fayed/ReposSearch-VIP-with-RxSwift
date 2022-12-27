@@ -4,35 +4,40 @@
 //
 //  Created by Ali Fayed on 27/12/2022.
 //
-
 import UIKit
 import RxSwift
 import RxCocoa
-class RepositoriesViewController: ReposDisplay {
-    @IBOutlet weak var tableView: UITableView!
+class ReposViewController: ReposViewDisplay {
+    // MARK: - IBOutlets
+    @IBOutlet weak private var tableView: UITableView!
+    // MARK: - Props
     private let refreshControl = UIRefreshControl()
     private let bag = DisposeBag()
     var interactor: ReposBusinessLogic?
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
         initLogic()
     }
+    // MARK: - Data Logic
     private func initLogic() {
         let request = ReposModel.LoadRepos.Request()
         interactor?.fetchRepositories(request: request)
     }
+    // MARK: - View Logic
     private func initView() {
         initTableView()
     }
+    // MARK: - TableView
     private func initTableView() {
         initTableViewCellForRowAt()
         initTableViewDidSelect()
         initTableViewRefreshControl()
     }
     private func initTableViewCellForRowAt() {
-        dataSource.reposSubject.bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { row, item, cell in
-            cell.textLabel?.text = item.repoFullName
+        viewDataSource.reposSubject.bind(to: tableView.rx.items(cellIdentifier: ReposViewConstants.reposCell, cellType: UITableViewCell.self)) { row, repo, cell in
+            cell.textLabel?.text = repo.repoFullName
         }.disposed(by: bag)
     }
     private func initTableViewDidSelect() {

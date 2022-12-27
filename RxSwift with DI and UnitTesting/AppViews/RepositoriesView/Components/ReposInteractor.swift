@@ -4,14 +4,9 @@
 //
 //  Created by Ali Fayed on 27/12/2022.
 //
-
-import Foundation
-protocol ReposBusinessLogic {
-  func fetchRepositories(request: ReposModel.LoadRepos.Request)
-}
 final class HomeInteractor: ReposBusinessLogic {
-    var presenter: ReposPresentationLogic?
     private let reposUseCase: FetchReposUseCase?
+    var presenter: ReposPresentationLogic?
     init(reposUseCase: FetchReposUseCase?, presenter: ReposPresentationLogic?) {
         self.reposUseCase = reposUseCase
         self.presenter = presenter

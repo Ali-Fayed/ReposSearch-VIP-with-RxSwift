@@ -6,9 +6,6 @@
 //
 
 import Alamofire
-import UIKit
-
-import Alamofire
 struct NetworkManger {
     static let shared = NetworkManger()
     let afSession: Session = {
@@ -32,8 +29,4 @@ struct NetworkManger {
         })
         return model
     }
-}
-struct NetworkRequestValues<T: Decodable>{
-    let dataModel: T.Type
-    let requestData: URLRequestConvertible
 }
