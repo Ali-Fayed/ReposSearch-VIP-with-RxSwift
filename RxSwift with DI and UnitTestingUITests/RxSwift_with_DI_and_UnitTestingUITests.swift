@@ -2,7 +2,7 @@
 //  RxSwift_with_DI_and_UnitTestingUITests.swift
 //  RxSwift with DI and UnitTestingUITests
 //
-//  Created by Ali Fixed on 27/12/2022.
+//  Created by Ali Fayed on 27/12/2022.
 //
 
 import XCTest
