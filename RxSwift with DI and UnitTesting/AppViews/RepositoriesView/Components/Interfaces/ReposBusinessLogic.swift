@@ -10,6 +10,6 @@ import RxSwift
 import RxCocoa
 protocol ReposBusinessLogic {
     typealias request = ReposModel.LoadRepos.Request
-    var showLoading:  BehaviorRelay<Bool> {get set}
+    var showLoading: BehaviorRelay<Bool> {get set}
     func fetchRepositories(request: request, page: Int, query: String)
 }
