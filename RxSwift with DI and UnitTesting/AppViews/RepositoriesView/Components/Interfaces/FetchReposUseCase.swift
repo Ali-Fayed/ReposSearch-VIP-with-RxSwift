@@ -10,5 +10,5 @@ import RxSwift
 import RxCocoa
 protocol FetchReposUseCase {
     typealias repositoriesObservable = (Observable<ApiResult<Repositories, ApiErrorMessage>>)
-    func excute() -> (repositoriesObservable)
+    func excute(page: Int, query: String) -> (repositoriesObservable)
 }

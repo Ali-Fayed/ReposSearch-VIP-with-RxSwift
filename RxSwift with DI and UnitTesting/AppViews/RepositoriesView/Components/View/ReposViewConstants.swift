@@ -13,4 +13,5 @@ struct ReposViewConstants {
     static let page = 1
     static let errorAlertTitle = "Error"
     static let errorButtonTitle = "Ok"
+    static let searchPlaceholder = "Search .."
 }

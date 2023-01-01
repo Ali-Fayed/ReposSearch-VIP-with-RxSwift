@@ -7,7 +7,7 @@
 import RxSwift
 import RxCocoa
 final class HomeInteractor: ReposBusinessLogic {
-    private let disposeBage = DisposeBag()
+    private let disposeBag = DisposeBag()
     private let reposUseCase: FetchReposUseCase?
     typealias request = ReposModel.LoadRepos.Request
     var showLoading = BehaviorRelay<Bool>(value: false)
@@ -16,9 +16,9 @@ final class HomeInteractor: ReposBusinessLogic {
         self.reposUseCase = reposUseCase
         self.presenter = presenter
     }
-    func fetchRepositories(request: request) {
+    func fetchRepositories(request: request, page: Int, query: String) {
         showLoading.accept(true)
-        guard let repoObservable = reposUseCase?.excute() else {return}
+        guard let repoObservable = reposUseCase?.excute(page: page, query: query) else {return}
         repoObservable.subscribe(onNext: { result in
             switch result {
             case let .success(repo):
@@ -35,6 +35,6 @@ final class HomeInteractor: ReposBusinessLogic {
             // unexpecting errors like data type error
             let error = ReposModel.LoadRepos.ReposAPIError(error: error)
             self.presenter?.presentRepoError(response: error)
-        }).disposed(by: disposeBage)
+        }).disposed(by: disposeBag)
     }
 }

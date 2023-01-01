@@ -14,8 +14,9 @@ class ReposViewController: ReposViewDisplay {
     // MARK: - UI Properties
     private let refreshControl = UIRefreshControl()
     private let activityIndicatorView = UIActivityIndicatorView(style: .large)
+    private let searchController = UISearchController(searchResultsController: nil)
     // MARK: - Properties
-    private let disposeBage = DisposeBag()
+    private let disposeBag = DisposeBag()
     var interactor: ReposBusinessLogic?
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -26,6 +27,8 @@ class ReposViewController: ReposViewDisplay {
     // MARK: - Main Methods
     private func initView() {
         initTableView()
+        initSearchController(search: searchController, placeholder: ReposViewConstants.searchPlaceholder)
+        initSearchController()
         observeOnLoading()
         observeOnError()
     }
@@ -35,17 +38,17 @@ class ReposViewController: ReposViewDisplay {
     // MARK: - ViewController Methods
     private func fetchRepos() {
         let request = ReposModel.LoadRepos.Request()
-        interactor?.fetchRepositories(request: request)
+        interactor?.fetchRepositories(request: request, page: ReposViewConstants.page, query: ReposViewConstants.baseSearchKeywoard)
     }
     private func observeOnLoading() {
         showActivityIndicator(activityIndicatorView: activityIndicatorView)
-        interactor?.showLoading.asObservable().observe(on: MainScheduler.instance).bind(to: activityIndicatorView.rx.isAnimating).disposed(by: disposeBage)
+        interactor?.showLoading.asObservable().observe(on: MainScheduler.instance).bind(to: activityIndicatorView.rx.isAnimating).disposed(by: disposeBag)
     }
     private func observeOnError() {
         viewDataSource.errorSubject.subscribe { [weak self] error in
             guard let self = self else { return }
             self.showAlert(title: ReposViewConstants.errorAlertTitle, message: error.message, buttonTitle: ReposViewConstants.errorButtonTitle)
-        }.disposed(by: disposeBage)
+        }.disposed(by: disposeBag)
     }
     private func showAlert(title: String, message: String, buttonTitle: String) {
         let actions: [UIAlertController.AlertAction] = [ .action(title: buttonTitle, style: .destructive) ]
@@ -54,7 +57,7 @@ class ReposViewController: ReposViewDisplay {
             .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
                 self.fetchRepos()
-            }).disposed(by: self.disposeBage)
+            }).disposed(by: self.disposeBag)
     }
     // MARK: - TableView Methods
     private func initTableView() {
@@ -72,7 +75,7 @@ class ReposViewController: ReposViewDisplay {
             } else {
                 cell.textLabel?.text = repo.repoFullName
             }
-        }.disposed(by: disposeBage)
+        }.disposed(by: disposeBag)
     }
     private func tableViewSelection() {
         Observable
@@ -81,7 +84,7 @@ class ReposViewController: ReposViewDisplay {
                 guard let self = self else { return }
                 self.tableView.deselectRow(at: indexPath, animated: true)
                 print(repos.repoFullName)
-            }.disposed(by: disposeBage)
+            }.disposed(by: disposeBag)
     }
     private func tableViewRefresh() {
         tableView.addSubview(refreshControl)
@@ -89,6 +92,35 @@ class ReposViewController: ReposViewDisplay {
             guard let self = self else { return }
             self.fetchRepos()
             self.refreshControl.endRefreshing()
-        }).disposed(by: disposeBage)
+        }).disposed(by: disposeBag)
+    }
+    // MARK: - SearchController Methods
+    private func initSearchController() {
+        handleTextEditingSearch()
+        handleCancelButtonClicked()
+        handleSearchButtonClicked()
+    }
+    private func handleTextEditingSearch() {
+//        searchController.searchBar.rx.text
+//              .orEmpty
+//              .throttle(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
+//              .distinctUntilChanged()
+//              .subscribe { [weak self] (query) in
+//                  guard let self = self else { return }
+//                  let request = ReposModel.LoadRepos.Request()
+//                  self.interactor?.fetchRepositories(request: request, page: ReposViewConstants.page, query: query)
+//              }.disposed(by: disposeBag)
+      }
+    private func handleCancelButtonClicked() {
+        searchController.searchBar.rx.cancelButtonClicked.subscribe { [weak self] _ in
+            guard let self = self else { return }
+            self.fetchRepos()
+        }.disposed(by: disposeBag)
+    }
+    private func handleSearchButtonClicked() {
+        searchController.searchBar.rx.searchButtonClicked.subscribe { [weak self] _ in
+            guard let self = self else { return }
+            self.fetchRepos()
+        }.disposed(by: disposeBag)
     }
 }
