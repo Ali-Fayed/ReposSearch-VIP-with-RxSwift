@@ -7,6 +7,7 @@
 import RxSwift
 import RxCocoa
 class ReposDataSource {
+    var reposData = [Repository]()
     let showLoading = BehaviorRelay<Bool>(value: true)
     let reposSubject = PublishSubject<[Repository]>()
     let errorSubject = PublishSubject<ApiErrorMessage>()

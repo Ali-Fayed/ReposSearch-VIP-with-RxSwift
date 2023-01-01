@@ -64,12 +64,13 @@ class ReposViewController: ReposViewDisplay {
         tableViewDataBinding()
         tableViewSelection()
         tableViewRefresh()
+        tableViewPrefetch()
     }
     private func tableViewDataBinding() {
         viewDataSource.reposSubject.bind(to: tableView.rx.items(cellIdentifier: ReposViewConstants.reposCell, cellType: UITableViewCell.self)) { row, repo, cell in
             if #available(iOS 16.0, *) {
                 let hostingConfiguration = UIHostingConfiguration {
-                    ReposListCell(userAvatar: repo.repoOwnerAvatarURL, userName: repo.repoOwnerName, repoName: repo.repositoryName, repoDescription: repo.repositoryDescription ?? "", repoStarsCount: "\(repo.repositoryStars ?? 1)", repoLanguage: repo.repositoryLanguage ?? "", repoLanguageCircleColor: "red")
+                    ReposListCell(userAvatar: repo.repoOwnerAvatarURL, userName: repo.repoOwnerName, repoName: repo.repositoryName, repoDescription: repo.repositoryDescription ?? "", repoStarsCount: "\(repo.repositoryStars ?? 1)", repoLanguage: repo.repositoryLanguage ?? "", repoLanguageCircleColor: "")
                 }
                 cell.contentConfiguration = hostingConfiguration
             } else {
@@ -86,6 +87,12 @@ class ReposViewController: ReposViewDisplay {
                 print(repos.repoFullName)
             }.disposed(by: disposeBag)
     }
+    private func tableViewPrefetch() {
+        tableView.rx.prefetchRows.subscribe(onNext: { [weak self] indexPaths in
+            guard let self = self else { return }
+            print(self)
+        }).disposed(by: disposeBag)
+    }
     private func tableViewRefresh() {
         tableView.addSubview(refreshControl)
         refreshControl.rx.controlEvent(.valueChanged).subscribe(onNext:  { [weak self] in
@@ -101,15 +108,14 @@ class ReposViewController: ReposViewDisplay {
         handleSearchButtonClicked()
     }
     private func handleTextEditingSearch() {
-//        searchController.searchBar.rx.text
-//              .orEmpty
-//              .throttle(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
-//              .distinctUntilChanged()
-//              .subscribe { [weak self] (query) in
-//                  guard let self = self else { return }
-//                  let request = ReposModel.LoadRepos.Request()
-//                  self.interactor?.fetchRepositories(request: request, page: ReposViewConstants.page, query: query)
-//              }.disposed(by: disposeBag)
+        searchController.searchBar.rx.text
+              .orEmpty
+              .throttle(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
+              .distinctUntilChanged()
+              .subscribe { [weak self] (query) in
+                  guard let self = self else { return }
+                print(self)
+              }.disposed(by: disposeBag)
       }
     private func handleCancelButtonClicked() {
         searchController.searchBar.rx.cancelButtonClicked.subscribe { [weak self] _ in
@@ -120,7 +126,13 @@ class ReposViewController: ReposViewDisplay {
     private func handleSearchButtonClicked() {
         searchController.searchBar.rx.searchButtonClicked.subscribe { [weak self] _ in
             guard let self = self else { return }
-            self.fetchRepos()
+            print(self)
         }.disposed(by: disposeBag)
+    }
+    private func handleSearchBarTextDidBeginEditing() {
+        searchController.searchBar.rx.textDidBeginEditing.subscribe(onNext: { [weak self] in
+            guard let self = self else { return }
+            print(self)
+         }).disposed(by: disposeBag)
     }
 }

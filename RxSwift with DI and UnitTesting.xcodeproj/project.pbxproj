@@ -231,7 +231,13 @@
 		6881B1DE295B1F0D001512B4 /* RepositoriesView */ = {
 			isa = PBXGroup;
 			children = (
-				6881B207295B38CB001512B4 /* Components */,
+				6881B1DF295B1F93001512B4 /* ReposModel.swift */,
+				6881B201295B2651001512B4 /* ReposDataSource.swift */,
+				6881B213295B562B001512B4 /* ReposDIManger.swift */,
+				6881B219295B5822001512B4 /* ReposViewConstants.swift */,
+				6881B208295B38D5001512B4 /* View */,
+				6881B20F295B5233001512B4 /* Interfaces */,
+				688B5E3F2961D99700ACFD32 /* Implemntation */,
 			);
 			path = RepositoriesView;
 			sourceTree = "<group>";
@@ -248,20 +254,6 @@
 				688B5E312961A7E300ACFD32 /* RxDecodeObservable.swift */,
 			);
 			path = NetworkLayer;
-			sourceTree = "<group>";
-		};
-		6881B207295B38CB001512B4 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				6881B1DF295B1F93001512B4 /* ReposModel.swift */,
-				6881B201295B2651001512B4 /* ReposDataSource.swift */,
-				6881B213295B562B001512B4 /* ReposDIManger.swift */,
-				6881B219295B5822001512B4 /* ReposViewConstants.swift */,
-				6881B208295B38D5001512B4 /* View */,
-				6881B20F295B5233001512B4 /* Interfaces */,
-				688B5E3F2961D99700ACFD32 /* Implemntation */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		6881B208295B38D5001512B4 /* View */ = {
