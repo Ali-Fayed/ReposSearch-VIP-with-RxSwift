@@ -11,8 +11,8 @@ enum ReposModel {
       var repos: [Repository]
     }
     struct ReposAPIError {
-        var error: Error
-      }
+        var error: ApiErrorMessage
+    }
     struct ReposViewModel {
         var repos: [Repository]
     }

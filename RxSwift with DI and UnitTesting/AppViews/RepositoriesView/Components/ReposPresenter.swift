@@ -6,7 +6,7 @@
 //
 final class ReposViewPresenter: ReposPresentationLogic {
     var displayLogic: ReposDisplayLogic?
-    init(displayLogic: ReposDisplayLogic? = nil) {
+    init(displayLogic: ReposDisplayLogic?) {
         self.displayLogic = displayLogic
     }
     func presentViewData(response: ReposModel.LoadRepos.ReposResponse) {

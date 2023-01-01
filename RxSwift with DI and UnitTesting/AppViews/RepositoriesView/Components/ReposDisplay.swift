@@ -12,7 +12,7 @@ class ReposViewDisplay: UIViewController, ReposDisplayLogic {
         viewDataSource.reposSubject.onCompleted()
     }
     func displayError(error: ReposModel.LoadRepos.ReposAPIError) {
-        viewDataSource.errorSubject.onError(error.error)
-        viewDataSource.errorSubject.onCompleted()
+        viewDataSource.reposSubject.onError(error.error)
+        viewDataSource.reposSubject.onCompleted()
     }
 }

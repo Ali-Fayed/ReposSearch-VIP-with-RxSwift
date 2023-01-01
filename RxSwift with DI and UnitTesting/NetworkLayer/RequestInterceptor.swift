@@ -23,5 +23,4 @@ class RequestIntercptor: RequestInterceptor {
       return completion(.doNotRetry)
     }
   }
-
 }

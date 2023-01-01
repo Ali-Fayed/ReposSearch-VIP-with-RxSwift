@@ -9,4 +9,6 @@ struct ReposViewConstants {
     static let reposCell = "reposCell"
     static let reposTitle = "Repos"
     static let reposTabBarImage = "person"
+    static let baseSearchKeywoard = "swift"
+    static let page = 1
 }

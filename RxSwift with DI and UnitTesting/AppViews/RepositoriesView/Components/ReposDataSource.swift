@@ -8,5 +8,4 @@ import RxSwift
 import RxCocoa
 class ReposDataSource {
     let reposSubject = PublishSubject<[Repository]>()
-    let errorSubject = PublishSubject<Error>()
 }

@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 protocol FetchReposUseCase {
-    func excute() async throws -> (Repositories)
+    func excute() -> (Observable<ApiResult<Repositories, ApiErrorMessage>>)
 }

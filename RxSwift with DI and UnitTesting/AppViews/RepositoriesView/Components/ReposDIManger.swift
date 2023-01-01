@@ -11,11 +11,11 @@ class ReposDIManger {
         container.register(FetchReposUseCase.self) { _ in
             return FetchRepos()
         }
-        container.register(ReposPresentationLogic.self) { _ in
-            return ReposViewPresenter()
-        }
         container.register(ReposDisplayLogic.self) { _ in
             return ReposViewDisplay()
+        }
+        container.register(ReposPresentationLogic.self) { resolver in
+            return ReposViewPresenter(displayLogic: resolver.resolve(ReposDisplayLogic.self))
         }
         container.register(HomeInteractor.self) { resolver in
             let interactor = HomeInteractor(reposUseCase: resolver.resolve(FetchReposUseCase.self), presenter: resolver.resolve(ReposPresentationLogic.self))
