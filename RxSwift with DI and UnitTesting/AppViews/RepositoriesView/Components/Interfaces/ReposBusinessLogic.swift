@@ -6,6 +6,10 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 protocol ReposBusinessLogic {
-  func fetchRepositories(request: ReposModel.LoadRepos.Request)
+    typealias request = ReposModel.LoadRepos.Request
+    var showLoading:  BehaviorRelay<Bool> {get set}
+    func fetchRepositories(request: request)
 }

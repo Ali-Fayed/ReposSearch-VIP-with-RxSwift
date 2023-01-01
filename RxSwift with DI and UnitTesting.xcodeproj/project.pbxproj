@@ -42,6 +42,8 @@
 		688B5E2D295C905B00ACFD32 /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 688B5E2C295C905B00ACFD32 /* RxAlamofire */; };
 		688B5E30295C907B00ACFD32 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 688B5E2F295C907B00ACFD32 /* Swinject */; };
 		688B5E322961A7E300ACFD32 /* RxDecodeObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E312961A7E300ACFD32 /* RxDecodeObservable.swift */; };
+		688B5E342961BD3600ACFD32 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E332961BD3600ACFD32 /* UIViewController+Ext.swift */; };
+		688B5E362961CAB400ACFD32 /* ReposErrorJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E352961CAB400ACFD32 /* ReposErrorJSONModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,8 @@
 		6881B21C295B5983001512B4 /* Storyboard+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Ext.swift"; sourceTree = "<group>"; };
 		6881B21E295B5B79001512B4 /* NetworkRequestValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestValues.swift; sourceTree = "<group>"; };
 		688B5E312961A7E300ACFD32 /* RxDecodeObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxDecodeObservable.swift; sourceTree = "<group>"; };
+		688B5E332961BD3600ACFD32 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		688B5E352961CAB400ACFD32 /* ReposErrorJSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposErrorJSONModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +237,7 @@
 				6881B1E7295B2145001512B4 /* EventMonitor.swift */,
 				6881B1EA295B2145001512B4 /* NetworkMonitor.swift */,
 				6881B21E295B5B79001512B4 /* NetworkRequestValues.swift */,
+				688B5E312961A7E300ACFD32 /* RxDecodeObservable.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 			children = (
 				6881B1E1295B1FD4001512B4 /* ReposJSONModel.swift */,
 				6881B217295B5746001512B4 /* ReposJSONModel+Ext.swift */,
+				688B5E352961CAB400ACFD32 /* ReposErrorJSONModel.swift */,
 			);
 			path = ReposJSONModel;
 			sourceTree = "<group>";
@@ -309,7 +315,7 @@
 		6881B220295B5C65001512B4 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
-				688B5E312961A7E300ACFD32 /* RxDecodeObservable.swift */,
+				688B5E332961BD3600ACFD32 /* UIViewController+Ext.swift */,
 				6881B21C295B5983001512B4 /* Storyboard+Ext.swift */,
 			);
 			path = Extentions;
@@ -464,6 +470,7 @@
 				6881B21A295B5822001512B4 /* ReposViewConstants.swift in Sources */,
 				6881B1EF295B2145001512B4 /* NetworkManger.swift in Sources */,
 				6881B1E2295B1FD4001512B4 /* ReposJSONModel.swift in Sources */,
+				688B5E362961CAB400ACFD32 /* ReposErrorJSONModel.swift in Sources */,
 				6881B200295B2636001512B4 /* ReposPresenter.swift in Sources */,
 				6881B1E0295B1F93001512B4 /* ReposModel.swift in Sources */,
 				6881B21F295B5B79001512B4 /* NetworkRequestValues.swift in Sources */,
@@ -477,6 +484,7 @@
 				6881B218295B5746001512B4 /* ReposJSONModel+Ext.swift in Sources */,
 				6881B1F1295B2145001512B4 /* NetworkMonitor.swift in Sources */,
 				6881B20C295B51AC001512B4 /* ReposBusinessLogic.swift in Sources */,
+				688B5E342961BD3600ACFD32 /* UIViewController+Ext.swift in Sources */,
 				6881B1FC295B2418001512B4 /* ReposInteractor.swift in Sources */,
 				6881B1A3295B1E5C001512B4 /* AppDelegate.swift in Sources */,
 				6881B1FA295B2262001512B4 /* ReposUseCase.swift in Sources */,

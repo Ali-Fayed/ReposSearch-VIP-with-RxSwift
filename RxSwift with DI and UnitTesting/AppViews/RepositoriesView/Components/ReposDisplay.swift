@@ -6,13 +6,15 @@
 //
 import UIKit
 class ReposViewDisplay: UIViewController, ReposDisplayLogic {
+    typealias repoViewModel = ReposModel.LoadRepos.ReposViewModel
+    typealias repoError = ReposModel.LoadRepos.ReposAPIError
     var viewDataSource = ReposDataSource()
-    func displayData(viewModel: ReposModel.LoadRepos.ReposViewModel) {
+    func displayData(viewModel: repoViewModel) {
         viewDataSource.reposSubject.onNext(viewModel.repos)
         viewDataSource.reposSubject.onCompleted()
     }
-    func displayError(error: ReposModel.LoadRepos.ReposAPIError) {
-        viewDataSource.reposSubject.onError(error.error)
-        viewDataSource.reposSubject.onCompleted()
+    func displayError(error: repoError) {
+        viewDataSource.errorSubject.onError(error.error)
+        viewDataSource.errorSubject.onCompleted()
     }
 }

@@ -7,6 +7,8 @@
 
 import Foundation
 protocol ReposDisplayLogic {
-  func displayData(viewModel: ReposModel.LoadRepos.ReposViewModel)
-  func displayError(error: ReposModel.LoadRepos.ReposAPIError)
+  typealias repoViewModel = ReposModel.LoadRepos.ReposViewModel
+  typealias repoError = ReposModel.LoadRepos.ReposAPIError
+  func displayData(viewModel: repoViewModel)
+  func displayError(error: repoError)
 }

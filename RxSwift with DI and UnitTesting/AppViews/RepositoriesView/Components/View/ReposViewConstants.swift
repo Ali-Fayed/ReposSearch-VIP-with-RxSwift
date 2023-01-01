@@ -11,4 +11,6 @@ struct ReposViewConstants {
     static let reposTabBarImage = "person"
     static let baseSearchKeywoard = "swift"
     static let page = 1
+    static let errorAlertTitle = "Error"
+    static let errorButtonTitle = "Ok"
 }

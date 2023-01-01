@@ -9,5 +9,6 @@ import Foundation
 import RxSwift
 import RxCocoa
 protocol FetchReposUseCase {
-    func excute() -> (Observable<ApiResult<Repositories, ApiErrorMessage>>)
+    typealias repositoriesObservable = (Observable<ApiResult<Repositories, ApiErrorMessage>>)
+    func excute() -> (repositoriesObservable)
 }

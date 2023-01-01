@@ -7,6 +7,8 @@
 
 import Foundation
 protocol ReposPresentationLogic {
-  func presentViewData(response: ReposModel.LoadRepos.ReposResponse)
-  func presentHomeError(response: ReposModel.LoadRepos.ReposAPIError)
+  typealias repoResponse = ReposModel.LoadRepos.ReposResponse
+  typealias repoError = ReposModel.LoadRepos.ReposAPIError
+  func presentViewData(response: repoResponse)
+  func presentRepoError(response: repoError)
 }

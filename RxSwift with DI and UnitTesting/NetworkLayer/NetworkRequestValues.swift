@@ -2,11 +2,10 @@
 //  NetworkRequestValues.swift
 //  RxSwift with DI and UnitTesting
 //
-//  Created by Ali Fixed on 27/12/2022.
+//  Created by Ali Fayed on 27/12/2022.
 //
-
 import Alamofire
 struct NetworkRequestValues<T: Decodable>{
-    let dataModel: T.Type
-    let requestData: URLRequestConvertible
+    let dataType: T.Type
+    let requestRouter: URLRequestConvertible
 }

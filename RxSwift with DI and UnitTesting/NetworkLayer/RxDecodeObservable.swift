@@ -2,11 +2,9 @@
 //  Observable.swift
 //  RxSwift with DI and UnitTesting
 //
-//  Created by Ali Fixed on 01/01/2023.
+//  Created by Ali Fayed on 01/01/2023.
 //
-
 import UIKit
-import RxSwift
 import RxCocoa
 import RxSwift
 extension Observable where Element == (HTTPURLResponse, Data){
@@ -25,7 +23,7 @@ extension Observable where Element == (HTTPURLResponse, Data){
                     apiErrorMessage = try JSONDecoder().decode(ApiErrorMessage.self, from: data)
                 } catch _ {
                     // or not. (this occurs if the API failed or doesn't return a handled exception)
-                    apiErrorMessage = ApiErrorMessage(error: "Server Error.")
+                    apiErrorMessage = ApiErrorMessage(message: "Server Error.", documentation_url: "")
                 }
                 return .failure(apiErrorMessage)
             }
@@ -43,7 +41,4 @@ enum ApiResult<Value, Error>{
     init(error: Error){
         self = .failure(error)
     }
-}
-struct ApiErrorMessage: Codable, Error {
-   let error: String
 }
