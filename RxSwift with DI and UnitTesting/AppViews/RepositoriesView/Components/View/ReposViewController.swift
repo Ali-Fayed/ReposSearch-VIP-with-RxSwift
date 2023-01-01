@@ -7,6 +7,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SwiftUI
 class ReposViewController: ReposViewDisplay {
     // MARK: - IBOutlets
     @IBOutlet weak private var tableView: UITableView!
@@ -31,7 +32,7 @@ class ReposViewController: ReposViewDisplay {
     private func initData() {
         fetchRepos()
     }
-    // MARK: - View Methods
+    // MARK: - ViewController Methods
     private func fetchRepos() {
         let request = ReposModel.LoadRepos.Request()
         interactor?.fetchRepositories(request: request)
@@ -55,7 +56,7 @@ class ReposViewController: ReposViewDisplay {
                 self.fetchRepos()
             }).disposed(by: self.disposeBage)
     }
-    // MARK: - TableView
+    // MARK: - TableView Methods
     private func initTableView() {
         tableViewDataBinding()
         tableViewSelection()
@@ -63,7 +64,14 @@ class ReposViewController: ReposViewDisplay {
     }
     private func tableViewDataBinding() {
         viewDataSource.reposSubject.bind(to: tableView.rx.items(cellIdentifier: ReposViewConstants.reposCell, cellType: UITableViewCell.self)) { row, repo, cell in
-            cell.textLabel?.text = repo.repoFullName
+            if #available(iOS 16.0, *) {
+                let hostingConfiguration = UIHostingConfiguration {
+                    ReposListCell(userAvatar: repo.repoOwnerAvatarURL, userName: repo.repoOwnerName, repoName: repo.repositoryName, repoDescription: repo.repositoryDescription ?? "", repoStarsCount: "\(repo.repositoryStars ?? 1)", repoLanguage: repo.repositoryLanguage ?? "", repoLanguageCircleColor: "red")
+                }
+                cell.contentConfiguration = hostingConfiguration
+            } else {
+                cell.textLabel?.text = repo.repoFullName
+            }
         }.disposed(by: disposeBage)
     }
     private func tableViewSelection() {

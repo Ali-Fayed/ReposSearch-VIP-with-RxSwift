@@ -6,7 +6,7 @@
 //
 import Foundation
 struct ReposViewConstants {
-    static let reposCell = "reposCell"
+    static let reposCell = "repoCell"
     static let reposTitle = "Repos"
     static let reposTabBarImage = "person"
     static let baseSearchKeywoard = "swift"
