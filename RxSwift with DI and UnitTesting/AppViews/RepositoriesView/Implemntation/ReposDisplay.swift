@@ -10,9 +10,13 @@ class ReposViewDisplay: UIViewController, ReposDisplayLogic {
     typealias repoError = ReposModel.LoadRepos.ReposAPIError
     var viewDataSource = ReposDataSource()
     func displayData(viewModel: repoViewModel) {
-        viewDataSource.reposData = viewModel.repos
-        viewDataSource.reposSubject.onNext(viewDataSource.reposData)
-        viewDataSource.reposSubject.onCompleted()
+        viewDataSource.reposData.append(contentsOf: viewModel.repos)
+        viewDataSource.searchReposData = viewModel.repos
+        if viewDataSource.isSearching.value {
+            viewDataSource.reposSubject.onNext(viewDataSource.searchReposData)
+        } else {
+            viewDataSource.reposSubject.onNext(viewDataSource.reposData)
+        }
     }
     func displayError(error: repoError) {
         viewDataSource.errorSubject.onError(error.error)

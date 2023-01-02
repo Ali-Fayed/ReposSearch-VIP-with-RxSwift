@@ -90,7 +90,15 @@ class ReposViewController: ReposViewDisplay {
     private func tableViewPrefetch() {
         tableView.rx.prefetchRows.subscribe(onNext: { [weak self] indexPaths in
             guard let self = self else { return }
-            print(self)
+            for indexPath in indexPaths {
+                if indexPath.row == self.viewDataSource.reposData.count - 1 {
+                    if self.viewDataSource.pageNo < self.viewDataSource.totalPages {
+                        self.viewDataSource.pageNo += 1
+                        let request = ReposModel.LoadRepos.Request()
+                        self.interactor?.fetchRepositories(request: request, page: self.viewDataSource.pageNo, query: ReposViewConstants.baseSearchKeywoard)
+                    }
+                }
+            }
         }).disposed(by: disposeBag)
     }
     private func tableViewRefresh() {
@@ -110,23 +118,28 @@ class ReposViewController: ReposViewDisplay {
     private func handleTextEditingSearch() {
         searchController.searchBar.rx.text
               .orEmpty
-              .throttle(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
+              .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
               .distinctUntilChanged()
               .subscribe { [weak self] (query) in
-                  guard let self = self else { return }
-                print(self)
+                  if query != "" {
+                      guard let self = self else { return }
+                      self.viewDataSource.isSearching.accept(true)
+                      let request = ReposModel.LoadRepos.Request()
+                      self.interactor?.fetchRepositories(request: request, page: ReposViewConstants.page, query: query)
+                  }
               }.disposed(by: disposeBag)
-      }
+    }
     private func handleCancelButtonClicked() {
         searchController.searchBar.rx.cancelButtonClicked.subscribe { [weak self] _ in
             guard let self = self else { return }
+            self.viewDataSource.isSearching.accept(false)
             self.fetchRepos()
         }.disposed(by: disposeBag)
     }
     private func handleSearchButtonClicked() {
         searchController.searchBar.rx.searchButtonClicked.subscribe { [weak self] _ in
             guard let self = self else { return }
-            print(self)
+            self.viewDataSource.isSearching.accept(false)
         }.disposed(by: disposeBag)
     }
     private func handleSearchBarTextDidBeginEditing() {
