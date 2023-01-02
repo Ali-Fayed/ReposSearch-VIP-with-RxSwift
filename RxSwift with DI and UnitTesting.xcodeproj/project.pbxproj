@@ -235,13 +235,10 @@
 		6881B1DE295B1F0D001512B4 /* RepositoriesView */ = {
 			isa = PBXGroup;
 			children = (
-				6881B1DF295B1F93001512B4 /* ReposVCModel.swift */,
-				6881B201295B2651001512B4 /* ReposDataSource.swift */,
-				6881B213295B562B001512B4 /* ReposDIManger.swift */,
-				6881B219295B5822001512B4 /* ReposVCConstants.swift */,
 				6881B208295B38D5001512B4 /* View */,
 				6881B20F295B5233001512B4 /* Interfaces */,
 				688B5E3F2961D99700ACFD32 /* Implemntation */,
+				688B5E4429638EDD00ACFD32 /* Other */,
 			);
 			path = RepositoriesView;
 			sourceTree = "<group>";
@@ -267,6 +264,7 @@
 				688B5E402963810500ACFD32 /* ReposTableView+Ext.swift */,
 				688B5E42296381DF00ACFD32 /* ReposSearchBar+Ext.swift */,
 				688B5E372961CCC700ACFD32 /* ReposTableCellSwiftUI.swift */,
+				6881B201295B2651001512B4 /* ReposDataSource.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -331,12 +329,22 @@
 		688B5E3F2961D99700ACFD32 /* Implemntation */ = {
 			isa = PBXGroup;
 			children = (
+				6881B1DF295B1F93001512B4 /* ReposVCModel.swift */,
 				6881B1F9295B2262001512B4 /* ReposUseCase.swift */,
 				6881B1FF295B2636001512B4 /* ReposPresenter.swift */,
 				6881B1FB295B2418001512B4 /* ReposInteractor.swift */,
 				6881B205295B33E6001512B4 /* ReposDisplay.swift */,
 			);
 			path = Implemntation;
+			sourceTree = "<group>";
+		};
+		688B5E4429638EDD00ACFD32 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				6881B213295B562B001512B4 /* ReposDIManger.swift */,
+				6881B219295B5822001512B4 /* ReposVCConstants.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
