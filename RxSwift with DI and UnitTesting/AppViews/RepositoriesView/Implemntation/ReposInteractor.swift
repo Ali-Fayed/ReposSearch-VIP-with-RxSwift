@@ -9,7 +9,7 @@ import RxCocoa
 final class HomeInteractor: ReposBusinessLogic {
     private let disposeBag = DisposeBag()
     private let reposUseCase: FetchReposUseCase?
-    typealias request = ReposModel.LoadRepos.Request
+    typealias request = ReposVCModel.Request
     var showLoading = BehaviorRelay<Bool>(value: false)
     var presenter: ReposPresentationLogic?
     init(reposUseCase: FetchReposUseCase?, presenter: ReposPresentationLogic?) {
@@ -24,17 +24,17 @@ final class HomeInteractor: ReposBusinessLogic {
             case let .success(repo):
                 // if response succedded
                 self.showLoading.accept(false)
-                let response = ReposModel.LoadRepos.ReposResponse(repos: repo.items)
-                self.presenter?.presentViewData(response: response)
+                let response = ReposVCModel.ReposAPIResponse(repos: repo.items)
+                self.presenter?.presentReposViewWithResponse(response: response)
             case let .failure(error):
                 // if response code is not 200 ... 300
-                let error = ReposModel.LoadRepos.ReposAPIError(error: error)
-                self.presenter?.presentRepoError(response: error)
+                let error = ReposVCModel.ReposAPIError(error: error)
+                self.presenter?.presentReposViewWithError(error: error)
             }
         }, onError:{ error in
             // unexpecting errors like data type error
-            let error = ReposModel.LoadRepos.ReposAPIError(error: error)
-            self.presenter?.presentRepoError(response: error)
+            let error = ReposVCModel.ReposAPIError(error: error)
+            self.presenter?.presentReposViewWithError(error: error)
         }).disposed(by: disposeBag)
     }
 }

@@ -4,10 +4,9 @@
 //
 //  Created by Ali Fayed on 27/12/2022.
 //
-enum ReposModel {
-  enum LoadRepos {
+enum ReposVCModel {
     struct Request{}
-    struct ReposResponse {
+    struct ReposAPIResponse {
       var repos: [Repository]
     }
     struct ReposAPIError {
@@ -16,5 +15,4 @@ enum ReposModel {
     struct ReposViewModel {
         var repos: [Repository]
     }
-  }
 }

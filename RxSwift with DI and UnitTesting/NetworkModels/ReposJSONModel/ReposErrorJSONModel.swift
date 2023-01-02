@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct ApiErrorMessage: Codable, Error {
+struct ApiError: Codable, Error {
    let message: String
    let documentation_url: String
 }

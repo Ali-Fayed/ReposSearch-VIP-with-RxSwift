@@ -8,11 +8,11 @@ import RxSwift
 import RxCocoa
 class ReposDataSource {
     var reposData = [Repository]()
-    var searchReposData = [Repository]()
     var isSearching = BehaviorRelay<Bool>(value: false)
     let showLoading = BehaviorRelay<Bool>(value: true)
     let reposSubject = PublishSubject<[Repository]>()
-    let errorSubject = PublishSubject<ApiErrorMessage>()
+    let errorSubject = PublishSubject<ApiError>()
     var pageNo = 1
     var totalPages = 100
+    var baseSearchKeywoard = "swift"
 }

@@ -6,17 +6,17 @@
 //
 final class ReposViewPresenter: ReposPresentationLogic {
     var displayLogic: ReposDisplayLogic?
-    typealias repoResponse = ReposModel.LoadRepos.ReposResponse
-    typealias repoError = ReposModel.LoadRepos.ReposAPIError
+    typealias response = ReposVCModel.ReposAPIResponse
+    typealias error = ReposVCModel.ReposAPIError
     init(displayLogic: ReposDisplayLogic?) {
         self.displayLogic = displayLogic
     }
-    func presentViewData(response: repoResponse) {
-        let viewModel = ReposModel.LoadRepos.ReposViewModel(repos: response.repos)
-        displayLogic?.displayData(viewModel: viewModel)
+    func presentReposViewWithResponse(response: response) {
+        let viewModel = ReposVCModel.ReposViewModel(repos: response.repos)
+        displayLogic?.displayVCwithData(viewModel: viewModel)
     }
-    func presentRepoError(response: repoError) {
-        let error = ReposModel.LoadRepos.ReposAPIError(error: response.error)
-        displayLogic?.displayError(error: error)
+    func presentReposViewWithError(error: error) {
+        let error = ReposVCModel.ReposAPIError(error: error.error)
+        displayLogic?.displayVCwithError(error: error)
     }
 }

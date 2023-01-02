@@ -6,11 +6,11 @@
 //
 import UIKit
 import RxSwift
-import RxCocoa
 import SwiftUI
 class ReposViewController: ReposViewDisplay {
     // MARK: - IBOutlets
     @IBOutlet weak private var tableView: UITableView!
+    @IBOutlet weak private var searchPlaceholderLabel: UILabel!
     // MARK: - UI Properties
     private let refreshControl = UIRefreshControl()
     private let activityIndicatorView = UIActivityIndicatorView(style: .large)
@@ -23,54 +23,67 @@ class ReposViewController: ReposViewDisplay {
         super.viewDidLoad()
         initView()
         initData()
+        initStates()
     }
     // MARK: - Main Methods
     private func initView() {
         initTableView()
-        initSearchController(search: searchController, placeholder: ReposViewConstants.searchPlaceholder)
         initSearchController()
-        observeOnLoading()
-        observeOnError()
+    }
+    private func initStates() {
+        handleLoadingState()
+        handleErrorState()
     }
     private func initData() {
         fetchRepos()
     }
-    // MARK: - ViewController Methods
-    private func fetchRepos() {
-        let request = ReposModel.LoadRepos.Request()
-        interactor?.fetchRepositories(request: request, page: ReposViewConstants.page, query: ReposViewConstants.baseSearchKeywoard)
-    }
-    private func observeOnLoading() {
+    // MARK: - State Methods
+    private func handleLoadingState() {
         showActivityIndicator(activityIndicatorView: activityIndicatorView)
         interactor?.showLoading.asObservable().observe(on: MainScheduler.instance).bind(to: activityIndicatorView.rx.isAnimating).disposed(by: disposeBag)
     }
-    private func observeOnError() {
-        viewDataSource.errorSubject.subscribe { [weak self] error in
+    private func handleErrorState() {
+        dataSource.errorSubject.subscribe { [weak self] error in
             guard let self = self else { return }
-            self.showAlert(title: ReposViewConstants.errorAlertTitle, message: error.message, buttonTitle: ReposViewConstants.errorButtonTitle)
+            self.showErrorAlert(title: ReposVCConstants.errorAlertTitle, message: error.message, buttonTitle: ReposVCConstants.errorButtonTitle)
         }.disposed(by: disposeBag)
     }
-    private func showAlert(title: String, message: String, buttonTitle: String) {
-        let actions: [UIAlertController.AlertAction] = [ .action(title: buttonTitle, style: .destructive) ]
-        UIAlertController
-            .present(in: self, title: title, message: message, style: .alert, actions: actions)
-            .subscribe(onNext: { [weak self] _ in
-                guard let self = self else { return }
-                self.fetchRepos()
-            }).disposed(by: self.disposeBag)
+    // MARK: - Data Methods
+    private func fetchRepos() {
+        let request = ReposVCModel.Request()
+        interactor?.fetchRepositories(request: request, page: ReposVCConstants.page, query: dataSource.baseSearchKeywoard)
+    }
+    private func fetchMoreRepos(indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            if indexPath.row == self.dataSource.reposData.count - 1 {
+                if self.dataSource.pageNo < self.dataSource.totalPages {
+                    self.dataSource.pageNo += 1
+                    let request = ReposVCModel.Request()
+                    self.interactor?.fetchRepositories(request: request, page: self.dataSource.pageNo, query: dataSource.baseSearchKeywoard)
+                }
+            }
+        }
+    }
+    private func searchForRepos(query: String) {
+        self.tableView.isHidden = false
+        self.searchPlaceholderLabel.isHidden = true
+        self.dataSource.isSearching.accept(true)
+        let request = ReposVCModel.Request()
+        self.interactor?.fetchRepositories(request: request, page: ReposVCConstants.page, query: query)
     }
     // MARK: - TableView Methods
     private func initTableView() {
         tableViewDataBinding()
-        tableViewSelection()
+        tableViewCellSelection()
         tableViewRefresh()
         tableViewPrefetch()
     }
     private func tableViewDataBinding() {
-        viewDataSource.reposSubject.bind(to: tableView.rx.items(cellIdentifier: ReposViewConstants.reposCell, cellType: UITableViewCell.self)) { row, repo, cell in
+        dataSource.reposSubject.bind(to: tableView.rx.items(cellIdentifier: ReposVCConstants.cellIdentifier, cellType: UITableViewCell.self)) { [weak self] row, repo, cell in
+            guard let self = self else { return }
             if #available(iOS 16.0, *) {
                 let hostingConfiguration = UIHostingConfiguration {
-                    ReposListCell(userAvatar: repo.repoOwnerAvatarURL, userName: repo.repoOwnerName, repoName: repo.repositoryName, repoDescription: repo.repositoryDescription ?? "", repoStarsCount: "\(repo.repositoryStars ?? 1)", repoLanguage: repo.repositoryLanguage ?? "", repoLanguageCircleColor: "")
+                    self.reposCellSwiftUI(repo: repo)
                 }
                 cell.contentConfiguration = hostingConfiguration
             } else {
@@ -78,27 +91,18 @@ class ReposViewController: ReposViewDisplay {
             }
         }.disposed(by: disposeBag)
     }
-    private func tableViewSelection() {
+    private func tableViewCellSelection() {
         Observable
             .zip(tableView.rx.itemSelected, tableView.rx.modelSelected(Repository.self))
             .bind { [weak self] indexPath, repos in
                 guard let self = self else { return }
                 self.tableView.deselectRow(at: indexPath, animated: true)
-                print(repos.repoFullName)
             }.disposed(by: disposeBag)
     }
     private func tableViewPrefetch() {
         tableView.rx.prefetchRows.subscribe(onNext: { [weak self] indexPaths in
             guard let self = self else { return }
-            for indexPath in indexPaths {
-                if indexPath.row == self.viewDataSource.reposData.count - 1 {
-                    if self.viewDataSource.pageNo < self.viewDataSource.totalPages {
-                        self.viewDataSource.pageNo += 1
-                        let request = ReposModel.LoadRepos.Request()
-                        self.interactor?.fetchRepositories(request: request, page: self.viewDataSource.pageNo, query: ReposViewConstants.baseSearchKeywoard)
-                    }
-                }
-            }
+            self.fetchMoreRepos(indexPaths: indexPaths)
         }).disposed(by: disposeBag)
     }
     private func tableViewRefresh() {
@@ -111,11 +115,13 @@ class ReposViewController: ReposViewDisplay {
     }
     // MARK: - SearchController Methods
     private func initSearchController() {
-        handleTextEditingSearch()
-        handleCancelButtonClicked()
-        handleSearchButtonClicked()
+        addSearchControllerInNavigationController(search: searchController, placeholder: ReposVCConstants.searchPlaceholder)
+        searchBarTextEditing()
+        searchBarCancelButtonClicked()
+        searchBarSearchButtonClicked()
+        searchBarTextDidBeginEditing()
     }
-    private func handleTextEditingSearch() {
+    private func searchBarTextEditing() {
         searchController.searchBar.rx.text
               .orEmpty
               .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
@@ -123,29 +129,45 @@ class ReposViewController: ReposViewDisplay {
               .subscribe { [weak self] (query) in
                   if query != "" {
                       guard let self = self else { return }
-                      self.viewDataSource.isSearching.accept(true)
-                      let request = ReposModel.LoadRepos.Request()
-                      self.interactor?.fetchRepositories(request: request, page: ReposViewConstants.page, query: query)
+                      self.searchForRepos(query: query)
                   }
               }.disposed(by: disposeBag)
     }
-    private func handleCancelButtonClicked() {
+    private func searchBarCancelButtonClicked() {
         searchController.searchBar.rx.cancelButtonClicked.subscribe { [weak self] _ in
             guard let self = self else { return }
-            self.viewDataSource.isSearching.accept(false)
+            self.dataSource.isSearching.accept(false)
+            self.tableView.isHidden = false
+            self.searchPlaceholderLabel.isHidden = true
             self.fetchRepos()
         }.disposed(by: disposeBag)
     }
-    private func handleSearchButtonClicked() {
+    private func searchBarSearchButtonClicked() {
         searchController.searchBar.rx.searchButtonClicked.subscribe { [weak self] _ in
             guard let self = self else { return }
-            self.viewDataSource.isSearching.accept(false)
+            self.tableView.isHidden = false
+            self.searchPlaceholderLabel.isHidden = true
+            self.dataSource.isSearching.accept(false)
         }.disposed(by: disposeBag)
     }
-    private func handleSearchBarTextDidBeginEditing() {
+    private func searchBarTextDidBeginEditing() {
         searchController.searchBar.rx.textDidBeginEditing.subscribe(onNext: { [weak self] in
             guard let self = self else { return }
-            print(self)
+            self.tableView.isHidden = true
+            self.searchPlaceholderLabel.isHidden = false
          }).disposed(by: disposeBag)
+    }
+    // MARK: - Other UI Methods
+    private func reposCellSwiftUI(repo: Repository) -> some View {
+        return ReposListCell(userAvatar: repo.repoOwnerAvatarURL, userName: repo.repoOwnerName, repoName: repo.repositoryName, repoDescription: repo.repositoryDescription ?? "", repoStarsCount: "\(repo.repositoryStars ?? 1)", repoLanguage: repo.repositoryLanguage ?? "", repoLanguageCircleColor: "")
+    }
+    private func showErrorAlert(title: String, message: String, buttonTitle: String) {
+        let actions: [UIAlertController.AlertAction] = [ .action(title: buttonTitle, style: .destructive) ]
+        UIAlertController
+            .present(in: self, title: title, message: message, style: .alert, actions: actions)
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.fetchRepos()
+            }).disposed(by: self.disposeBag)
     }
 }

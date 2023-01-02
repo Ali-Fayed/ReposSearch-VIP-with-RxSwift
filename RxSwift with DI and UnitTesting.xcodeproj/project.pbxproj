@@ -17,7 +17,7 @@
 		6881B1BD295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1BC295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingTests.swift */; };
 		6881B1C7295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1C6295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITests.swift */; };
 		6881B1C9295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1C8295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITestsLaunchTests.swift */; };
-		6881B1E0295B1F93001512B4 /* ReposModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1DF295B1F93001512B4 /* ReposModel.swift */; };
+		6881B1E0295B1F93001512B4 /* ReposVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1DF295B1F93001512B4 /* ReposVCModel.swift */; };
 		6881B1E2295B1FD4001512B4 /* ReposJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1E1295B1FD4001512B4 /* ReposJSONModel.swift */; };
 		6881B1EB295B2145001512B4 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1E4295B2145001512B4 /* RequestInterceptor.swift */; };
 		6881B1ED295B2145001512B4 /* RequestRouter .swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1E6295B2145001512B4 /* RequestRouter .swift */; };
@@ -36,7 +36,7 @@
 		6881B211295B526E001512B4 /* FetchReposUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B210295B526E001512B4 /* FetchReposUseCase.swift */; };
 		6881B214295B562B001512B4 /* ReposDIManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B213295B562B001512B4 /* ReposDIManger.swift */; };
 		6881B218295B5746001512B4 /* ReposJSONModel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B217295B5746001512B4 /* ReposJSONModel+Ext.swift */; };
-		6881B21A295B5822001512B4 /* ReposViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B219295B5822001512B4 /* ReposViewConstants.swift */; };
+		6881B21A295B5822001512B4 /* ReposVCConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B219295B5822001512B4 /* ReposVCConstants.swift */; };
 		6881B21D295B5983001512B4 /* Storyboard+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B21C295B5983001512B4 /* Storyboard+Ext.swift */; };
 		6881B21F295B5B79001512B4 /* NetworkRequestValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B21E295B5B79001512B4 /* NetworkRequestValues.swift */; };
 		688B5E2D295C905B00ACFD32 /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 688B5E2C295C905B00ACFD32 /* RxAlamofire */; };
@@ -82,7 +82,7 @@
 		6881B1C2295B1E5D001512B4 /* RxSwift with DI and UnitTestingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxSwift with DI and UnitTestingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6881B1C6295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwift_with_DI_and_UnitTestingUITests.swift; sourceTree = "<group>"; };
 		6881B1C8295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwift_with_DI_and_UnitTestingUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		6881B1DF295B1F93001512B4 /* ReposModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposModel.swift; sourceTree = "<group>"; };
+		6881B1DF295B1F93001512B4 /* ReposVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposVCModel.swift; sourceTree = "<group>"; };
 		6881B1E1295B1FD4001512B4 /* ReposJSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposJSONModel.swift; sourceTree = "<group>"; };
 		6881B1E4295B2145001512B4 /* RequestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
 		6881B1E6295B2145001512B4 /* RequestRouter .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestRouter .swift"; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 		6881B210295B526E001512B4 /* FetchReposUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchReposUseCase.swift; sourceTree = "<group>"; };
 		6881B213295B562B001512B4 /* ReposDIManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposDIManger.swift; sourceTree = "<group>"; };
 		6881B217295B5746001512B4 /* ReposJSONModel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReposJSONModel+Ext.swift"; sourceTree = "<group>"; };
-		6881B219295B5822001512B4 /* ReposViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposViewConstants.swift; sourceTree = "<group>"; };
+		6881B219295B5822001512B4 /* ReposVCConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposVCConstants.swift; sourceTree = "<group>"; };
 		6881B21C295B5983001512B4 /* Storyboard+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Ext.swift"; sourceTree = "<group>"; };
 		6881B21E295B5B79001512B4 /* NetworkRequestValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestValues.swift; sourceTree = "<group>"; };
 		688B5E312961A7E300ACFD32 /* RxDecodeObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxDecodeObservable.swift; sourceTree = "<group>"; };
@@ -231,10 +231,10 @@
 		6881B1DE295B1F0D001512B4 /* RepositoriesView */ = {
 			isa = PBXGroup;
 			children = (
-				6881B1DF295B1F93001512B4 /* ReposModel.swift */,
+				6881B1DF295B1F93001512B4 /* ReposVCModel.swift */,
 				6881B201295B2651001512B4 /* ReposDataSource.swift */,
 				6881B213295B562B001512B4 /* ReposDIManger.swift */,
-				6881B219295B5822001512B4 /* ReposViewConstants.swift */,
+				6881B219295B5822001512B4 /* ReposVCConstants.swift */,
 				6881B208295B38D5001512B4 /* View */,
 				6881B20F295B5233001512B4 /* Interfaces */,
 				688B5E3F2961D99700ACFD32 /* Implemntation */,
@@ -481,12 +481,12 @@
 				6881B214295B562B001512B4 /* ReposDIManger.swift in Sources */,
 				688B5E382961CCC700ACFD32 /* ReposCellSwiftUI.swift in Sources */,
 				688B5E3C2961CFDA00ACFD32 /* HostingCell.swift in Sources */,
-				6881B21A295B5822001512B4 /* ReposViewConstants.swift in Sources */,
+				6881B21A295B5822001512B4 /* ReposVCConstants.swift in Sources */,
 				6881B1EF295B2145001512B4 /* NetworkManger.swift in Sources */,
 				6881B1E2295B1FD4001512B4 /* ReposJSONModel.swift in Sources */,
 				688B5E362961CAB400ACFD32 /* ReposErrorJSONModel.swift in Sources */,
 				6881B200295B2636001512B4 /* ReposPresenter.swift in Sources */,
-				6881B1E0295B1F93001512B4 /* ReposModel.swift in Sources */,
+				6881B1E0295B1F93001512B4 /* ReposVCModel.swift in Sources */,
 				6881B21F295B5B79001512B4 /* NetworkRequestValues.swift in Sources */,
 				688B5E322961A7E300ACFD32 /* RxDecodeObservable.swift in Sources */,
 				6881B206295B33E6001512B4 /* ReposDisplay.swift in Sources */,

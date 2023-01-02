@@ -17,7 +17,7 @@ struct NetworkManger {
             interceptor: interceptor,
             eventMonitors: [networkLogger])
     }()
-    func performRequest<T: Decodable>(requestValues: NetworkRequestValues<T>) -> (Observable<ApiResult<T, ApiErrorMessage>>) {
+    func performRequest<T: Decodable>(requestValues: NetworkRequestValues<T>) -> (Observable<ApiResult<T, ApiError>>) {
         return self.afSession.rx.request(urlRequest: requestValues.requestRouter)
             .observe(on: MainScheduler.instance)
             .responseData()

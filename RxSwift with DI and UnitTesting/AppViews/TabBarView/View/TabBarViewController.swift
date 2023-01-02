@@ -24,10 +24,10 @@ class TabBarViewController: UITabBarController {
         guard let interactor = ReposDIManger().container.resolve(HomeInteractor.self) else {return}
         guard let presenter = ReposDIManger().container.resolve(ReposViewPresenter.self) else {return}
         let nav = UINavigationController(rootViewController: reposViewConfigurations(interactor: interactor, presenter: presenter))
-        nav.title = ReposViewConstants.reposTitle
+        nav.title = ReposVCConstants.viewTitle
         nav.navigationItem.largeTitleDisplayMode = .always
         nav.navigationBar.prefersLargeTitles = true
-        nav.tabBarItem = UITabBarItem(title: ReposViewConstants.reposTitle, image: UIImage(systemName: ReposViewConstants.reposTabBarImage), tag: 1)
+        nav.tabBarItem = UITabBarItem(title: ReposVCConstants.viewTitle, image: UIImage(systemName: ReposVCConstants.tabBarImage), tag: 1)
         setViewControllers([nav], animated: false)
     }
 }

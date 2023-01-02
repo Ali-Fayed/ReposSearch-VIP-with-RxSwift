@@ -13,7 +13,7 @@ extension UIViewController {
         activityIndicatorView.center = self.view.center
         activityIndicatorView.startAnimating()
     }
-    func initSearchController (search: UISearchController, placeholder: String) {
+    func addSearchControllerInNavigationController (search: UISearchController, placeholder: String) {
         search.obscuresBackgroundDuringPresentation = false
         search.hidesNavigationBarDuringPresentation = true
         navigationItem.hidesSearchBarWhenScrolling = false
