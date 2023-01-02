@@ -21,6 +21,13 @@ extension UIViewController {
         search.searchBar.placeholder = placeholder
         navigationItem.searchController = search
     }
+    func shotTableViewFooterLoadingIndicatorView(tableView: UITableView) {
+        let spinner = UIActivityIndicatorView(style: .medium)
+        spinner.startAnimating()
+        spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(44))
+        tableView.tableFooterView = spinner
+        tableView.tableFooterView?.isHidden = false
+    }
 }
 extension UIAlertController {
     struct AlertAction {

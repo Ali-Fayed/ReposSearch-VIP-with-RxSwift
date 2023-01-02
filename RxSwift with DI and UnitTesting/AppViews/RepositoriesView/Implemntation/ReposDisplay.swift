@@ -19,7 +19,6 @@ class ReposViewDisplay: UIViewController, ReposDisplayLogic {
         }
     }
     func displayVCwithError(error: error) {
-        dataSource.errorSubject.onError(error.error)
-        dataSource.errorSubject.onCompleted()
+        dataSource.errorBehaviour.accept(error.error)
     }
 }

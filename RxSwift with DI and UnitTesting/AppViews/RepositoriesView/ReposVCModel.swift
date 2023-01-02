@@ -10,7 +10,7 @@ enum ReposVCModel {
       var repos: [Repository]
     }
     struct ReposAPIError {
-        var error: Error
+        var error: ApiError
     }
     struct ReposViewModel {
         var repos: [Repository]

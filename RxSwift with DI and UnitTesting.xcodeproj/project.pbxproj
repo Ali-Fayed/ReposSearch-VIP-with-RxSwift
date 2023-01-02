@@ -44,10 +44,12 @@
 		688B5E322961A7E300ACFD32 /* RxDecodeObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E312961A7E300ACFD32 /* RxDecodeObservable.swift */; };
 		688B5E342961BD3600ACFD32 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E332961BD3600ACFD32 /* UIViewController+Ext.swift */; };
 		688B5E362961CAB400ACFD32 /* ReposErrorJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E352961CAB400ACFD32 /* ReposErrorJSONModel.swift */; };
-		688B5E382961CCC700ACFD32 /* ReposCellSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E372961CCC700ACFD32 /* ReposCellSwiftUI.swift */; };
+		688B5E382961CCC700ACFD32 /* ReposTableCellSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E372961CCC700ACFD32 /* ReposTableCellSwiftUI.swift */; };
 		688B5E3A2961CD0900ACFD32 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E392961CD0900ACFD32 /* AsyncImage.swift */; };
 		688B5E3C2961CFDA00ACFD32 /* HostingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E3B2961CFDA00ACFD32 /* HostingCell.swift */; };
 		688B5E3E2961D16800ACFD32 /* SwiftUI+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E3D2961D16800ACFD32 /* SwiftUI+Ext.swift */; };
+		688B5E412963810500ACFD32 /* ReposTableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E402963810500ACFD32 /* ReposTableView+Ext.swift */; };
+		688B5E43296381DF00ACFD32 /* ReposSearchBar+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E42296381DF00ACFD32 /* ReposSearchBar+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,10 +109,12 @@
 		688B5E312961A7E300ACFD32 /* RxDecodeObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxDecodeObservable.swift; sourceTree = "<group>"; };
 		688B5E332961BD3600ACFD32 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		688B5E352961CAB400ACFD32 /* ReposErrorJSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposErrorJSONModel.swift; sourceTree = "<group>"; };
-		688B5E372961CCC700ACFD32 /* ReposCellSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposCellSwiftUI.swift; sourceTree = "<group>"; };
+		688B5E372961CCC700ACFD32 /* ReposTableCellSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposTableCellSwiftUI.swift; sourceTree = "<group>"; };
 		688B5E392961CD0900ACFD32 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		688B5E3B2961CFDA00ACFD32 /* HostingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingCell.swift; sourceTree = "<group>"; };
 		688B5E3D2961D16800ACFD32 /* SwiftUI+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Ext.swift"; sourceTree = "<group>"; };
+		688B5E402963810500ACFD32 /* ReposTableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReposTableView+Ext.swift"; sourceTree = "<group>"; };
+		688B5E42296381DF00ACFD32 /* ReposSearchBar+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReposSearchBar+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,7 +264,9 @@
 			isa = PBXGroup;
 			children = (
 				6881B1A6295B1E5C001512B4 /* ReposViewController.swift */,
-				688B5E372961CCC700ACFD32 /* ReposCellSwiftUI.swift */,
+				688B5E402963810500ACFD32 /* ReposTableView+Ext.swift */,
+				688B5E42296381DF00ACFD32 /* ReposSearchBar+Ext.swift */,
+				688B5E372961CCC700ACFD32 /* ReposTableCellSwiftUI.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -479,10 +485,11 @@
 				6881B1A7295B1E5C001512B4 /* ReposViewController.swift in Sources */,
 				6881B1EB295B2145001512B4 /* RequestInterceptor.swift in Sources */,
 				6881B214295B562B001512B4 /* ReposDIManger.swift in Sources */,
-				688B5E382961CCC700ACFD32 /* ReposCellSwiftUI.swift in Sources */,
+				688B5E382961CCC700ACFD32 /* ReposTableCellSwiftUI.swift in Sources */,
 				688B5E3C2961CFDA00ACFD32 /* HostingCell.swift in Sources */,
 				6881B21A295B5822001512B4 /* ReposVCConstants.swift in Sources */,
 				6881B1EF295B2145001512B4 /* NetworkManger.swift in Sources */,
+				688B5E412963810500ACFD32 /* ReposTableView+Ext.swift in Sources */,
 				6881B1E2295B1FD4001512B4 /* ReposJSONModel.swift in Sources */,
 				688B5E362961CAB400ACFD32 /* ReposErrorJSONModel.swift in Sources */,
 				6881B200295B2636001512B4 /* ReposPresenter.swift in Sources */,
@@ -497,6 +504,7 @@
 				6881B202295B2651001512B4 /* ReposDataSource.swift in Sources */,
 				6881B20E295B5228001512B4 /* ReposDisplayLogic.swift in Sources */,
 				6881B218295B5746001512B4 /* ReposJSONModel+Ext.swift in Sources */,
+				688B5E43296381DF00ACFD32 /* ReposSearchBar+Ext.swift in Sources */,
 				6881B1F1295B2145001512B4 /* NetworkMonitor.swift in Sources */,
 				6881B20C295B51AC001512B4 /* ReposBusinessLogic.swift in Sources */,
 				688B5E342961BD3600ACFD32 /* UIViewController+Ext.swift in Sources */,

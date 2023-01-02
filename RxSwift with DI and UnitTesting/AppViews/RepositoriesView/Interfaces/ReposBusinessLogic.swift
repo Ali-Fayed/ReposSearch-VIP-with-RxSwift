@@ -8,5 +8,5 @@ import RxCocoa
 protocol ReposBusinessLogic {
     typealias request = ReposVCModel.Request
     var showLoading: BehaviorRelay<Bool> {get set}
-    func fetchRepositories(request: request, page: Int, query: String)
+    func fetchRepositories(request: request, page: Int, query: String, isPaginating: Bool)
 }
