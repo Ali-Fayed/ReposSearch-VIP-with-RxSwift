@@ -6,6 +6,7 @@
 //
 import RxSwift
 import RxCocoa
+import XCoordinator
 class ReposDataSource {
     // MARK: - Rx Properties
     let reposSubject = PublishSubject<[Repository]>()
@@ -13,6 +14,7 @@ class ReposDataSource {
     let showLoading = BehaviorRelay<Bool>(value: true)
     let errorBehaviour = BehaviorRelay<ApiError>(value: ApiError(message: "", documentation_url: ""))
     // MARK: - Normal Properties
+    var router: UnownedRouter<RepoTabRouter>?
     var reposData = [Repository]()
     var searchText = "swift"
     var pageNo = 1

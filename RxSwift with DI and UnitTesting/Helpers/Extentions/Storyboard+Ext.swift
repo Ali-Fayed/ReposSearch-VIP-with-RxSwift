@@ -10,6 +10,7 @@ protocol Storyboarded {
 }
 enum AppStoryboards: String {
     case main = "Main"
+    case passed = "Passed"
 }
 extension Storyboarded where Self: UIViewController {
     static func instaintiate(on storyboard: AppStoryboards) -> Self {

@@ -28,7 +28,6 @@
 		6881B1FC295B2418001512B4 /* ReposInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1FB295B2418001512B4 /* ReposInteractor.swift */; };
 		6881B200295B2636001512B4 /* ReposPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1FF295B2636001512B4 /* ReposPresenter.swift */; };
 		6881B202295B2651001512B4 /* ReposDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B201295B2651001512B4 /* ReposDataSource.swift */; };
-		6881B204295B2DF2001512B4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B203295B2DF2001512B4 /* TabBarViewController.swift */; };
 		6881B206295B33E6001512B4 /* ReposDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B205295B33E6001512B4 /* ReposDisplay.swift */; };
 		6881B20A295B5182001512B4 /* ReposPresentationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B209295B5182001512B4 /* ReposPresentationLogic.swift */; };
 		6881B20C295B51AC001512B4 /* ReposBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B20B295B51AC001512B4 /* ReposBusinessLogic.swift */; };
@@ -50,6 +49,12 @@
 		688B5E3E2961D16800ACFD32 /* SwiftUI+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E3D2961D16800ACFD32 /* SwiftUI+Ext.swift */; };
 		688B5E412963810500ACFD32 /* ReposTableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E402963810500ACFD32 /* ReposTableView+Ext.swift */; };
 		688B5E43296381DF00ACFD32 /* ReposSearchBar+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E42296381DF00ACFD32 /* ReposSearchBar+Ext.swift */; };
+		688B5E472963911D00ACFD32 /* XCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = 688B5E462963911D00ACFD32 /* XCoordinator */; };
+		688B5E492963911D00ACFD32 /* XCoordinatorCombine in Frameworks */ = {isa = PBXBuildFile; productRef = 688B5E482963911D00ACFD32 /* XCoordinatorCombine */; };
+		688B5E4B2963911D00ACFD32 /* XCoordinatorRx in Frameworks */ = {isa = PBXBuildFile; productRef = 688B5E4A2963911D00ACFD32 /* XCoordinatorRx */; };
+		688B5E562963918800ACFD32 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E4F2963918800ACFD32 /* TabBarCoordinator.swift */; };
+		688B5E572963918800ACFD32 /* RepoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E502963918800ACFD32 /* RepoCoordinator.swift */; };
+		688B5E582963918800ACFD32 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E512963918800ACFD32 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +100,6 @@
 		6881B1FB295B2418001512B4 /* ReposInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposInteractor.swift; sourceTree = "<group>"; };
 		6881B1FF295B2636001512B4 /* ReposPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposPresenter.swift; sourceTree = "<group>"; };
 		6881B201295B2651001512B4 /* ReposDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposDataSource.swift; sourceTree = "<group>"; };
-		6881B203295B2DF2001512B4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		6881B205295B33E6001512B4 /* ReposDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposDisplay.swift; sourceTree = "<group>"; };
 		6881B209295B5182001512B4 /* ReposPresentationLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposPresentationLogic.swift; sourceTree = "<group>"; };
 		6881B20B295B51AC001512B4 /* ReposBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposBusinessLogic.swift; sourceTree = "<group>"; };
@@ -115,6 +119,9 @@
 		688B5E3D2961D16800ACFD32 /* SwiftUI+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Ext.swift"; sourceTree = "<group>"; };
 		688B5E402963810500ACFD32 /* ReposTableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReposTableView+Ext.swift"; sourceTree = "<group>"; };
 		688B5E42296381DF00ACFD32 /* ReposSearchBar+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReposSearchBar+Ext.swift"; sourceTree = "<group>"; };
+		688B5E4F2963918800ACFD32 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		688B5E502963918800ACFD32 /* RepoCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoCoordinator.swift; sourceTree = "<group>"; };
+		688B5E512963918800ACFD32 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +129,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				688B5E492963911D00ACFD32 /* XCoordinatorCombine in Frameworks */,
+				688B5E4B2963911D00ACFD32 /* XCoordinatorRx in Frameworks */,
 				688B5E2D295C905B00ACFD32 /* RxAlamofire in Frameworks */,
+				688B5E472963911D00ACFD32 /* XCoordinator in Frameworks */,
 				688B5E30295C907B00ACFD32 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,11 +179,8 @@
 			children = (
 				6881B1DA295B1EC3001512B4 /* AppDelegate */,
 				6881B1DB295B1ECD001512B4 /* AppViews */,
-				6881B212295B52B9001512B4 /* NetworkModels */,
 				6881B1DC295B1ED7001512B4 /* Storyboard */,
-				6881B1E3295B2145001512B4 /* NetworkLayer */,
-				6881B220295B5C65001512B4 /* Extentions */,
-				6881B1DD295B1EE2001512B4 /* Resources */,
+				688B5E5B2963992C00ACFD32 /* Helpers */,
 				6881B1B3295B1E5D001512B4 /* Info.plist */,
 			);
 			path = "RxSwift with DI and UnitTesting";
@@ -208,7 +215,6 @@
 		6881B1DB295B1ECD001512B4 /* AppViews */ = {
 			isa = PBXGroup;
 			children = (
-				6881B215295B56D7001512B4 /* TabBarView */,
 				6881B1DE295B1F0D001512B4 /* RepositoriesView */,
 			);
 			path = AppViews;
@@ -288,14 +294,6 @@
 			path = NetworkModels;
 			sourceTree = "<group>";
 		};
-		6881B215295B56D7001512B4 /* TabBarView */ = {
-			isa = PBXGroup;
-			children = (
-				6881B21B295B5908001512B4 /* View */,
-			);
-			path = TabBarView;
-			sourceTree = "<group>";
-		};
 		6881B216295B5732001512B4 /* ReposJSONModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,14 +302,6 @@
 				688B5E352961CAB400ACFD32 /* ReposErrorJSONModel.swift */,
 			);
 			path = ReposJSONModel;
-			sourceTree = "<group>";
-		};
-		6881B21B295B5908001512B4 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				6881B203295B2DF2001512B4 /* TabBarViewController.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		6881B220295B5C65001512B4 /* Extentions */ = {
@@ -347,6 +337,28 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		688B5E4C2963918800ACFD32 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				688B5E512963918800ACFD32 /* AppCoordinator.swift */,
+				688B5E4F2963918800ACFD32 /* TabBarCoordinator.swift */,
+				688B5E502963918800ACFD32 /* RepoCoordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		688B5E5B2963992C00ACFD32 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				688B5E4C2963918800ACFD32 /* Navigation */,
+				6881B212295B52B9001512B4 /* NetworkModels */,
+				6881B1E3295B2145001512B4 /* NetworkLayer */,
+				6881B220295B5C65001512B4 /* Extentions */,
+				6881B1DD295B1EE2001512B4 /* Resources */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -366,6 +378,9 @@
 			packageProductDependencies = (
 				688B5E2C295C905B00ACFD32 /* RxAlamofire */,
 				688B5E2F295C907B00ACFD32 /* Swinject */,
+				688B5E462963911D00ACFD32 /* XCoordinator */,
+				688B5E482963911D00ACFD32 /* XCoordinatorCombine */,
+				688B5E4A2963911D00ACFD32 /* XCoordinatorRx */,
 			);
 			productName = "RxSwift with DI and UnitTesting";
 			productReference = 6881B19F295B1E5C001512B4 /* RxSwift with DI and UnitTesting.app */;
@@ -442,6 +457,7 @@
 			packageReferences = (
 				688B5E2B295C905B00ACFD32 /* XCRemoteSwiftPackageReference "RxAlamofire" */,
 				688B5E2E295C907B00ACFD32 /* XCRemoteSwiftPackageReference "Swinject" */,
+				688B5E452963911D00ACFD32 /* XCRemoteSwiftPackageReference "XCoordinator" */,
 			);
 			productRefGroup = 6881B1A0295B1E5C001512B4 /* Products */;
 			projectDirPath = "";
@@ -488,6 +504,7 @@
 			files = (
 				6881B211295B526E001512B4 /* FetchReposUseCase.swift in Sources */,
 				6881B1ED295B2145001512B4 /* RequestRouter .swift in Sources */,
+				688B5E562963918800ACFD32 /* TabBarCoordinator.swift in Sources */,
 				6881B1EE295B2145001512B4 /* EventMonitor.swift in Sources */,
 				6881B20A295B5182001512B4 /* ReposPresentationLogic.swift in Sources */,
 				6881B1A7295B1E5C001512B4 /* ReposViewController.swift in Sources */,
@@ -495,10 +512,12 @@
 				6881B214295B562B001512B4 /* ReposDIManger.swift in Sources */,
 				688B5E382961CCC700ACFD32 /* ReposTableCellSwiftUI.swift in Sources */,
 				688B5E3C2961CFDA00ACFD32 /* HostingCell.swift in Sources */,
+				688B5E572963918800ACFD32 /* RepoCoordinator.swift in Sources */,
 				6881B21A295B5822001512B4 /* ReposVCConstants.swift in Sources */,
 				6881B1EF295B2145001512B4 /* NetworkManger.swift in Sources */,
 				688B5E412963810500ACFD32 /* ReposTableView+Ext.swift in Sources */,
 				6881B1E2295B1FD4001512B4 /* ReposJSONModel.swift in Sources */,
+				688B5E582963918800ACFD32 /* AppCoordinator.swift in Sources */,
 				688B5E362961CAB400ACFD32 /* ReposErrorJSONModel.swift in Sources */,
 				6881B200295B2636001512B4 /* ReposPresenter.swift in Sources */,
 				6881B1E0295B1F93001512B4 /* ReposVCModel.swift in Sources */,
@@ -506,7 +525,6 @@
 				688B5E322961A7E300ACFD32 /* RxDecodeObservable.swift in Sources */,
 				6881B206295B33E6001512B4 /* ReposDisplay.swift in Sources */,
 				6881B1AD295B1E5C001512B4 /* RxSwift_with_DI_and_UnitTesting.xcdatamodeld in Sources */,
-				6881B204295B2DF2001512B4 /* TabBarViewController.swift in Sources */,
 				688B5E3A2961CD0900ACFD32 /* AsyncImage.swift in Sources */,
 				6881B21D295B5983001512B4 /* Storyboard+Ext.swift in Sources */,
 				6881B202295B2651001512B4 /* ReposDataSource.swift in Sources */,
@@ -880,6 +898,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		688B5E452963911D00ACFD32 /* XCRemoteSwiftPackageReference "XCoordinator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/QuickBirdEng/XCoordinator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -892,6 +918,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 688B5E2E295C907B00ACFD32 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		688B5E462963911D00ACFD32 /* XCoordinator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 688B5E452963911D00ACFD32 /* XCRemoteSwiftPackageReference "XCoordinator" */;
+			productName = XCoordinator;
+		};
+		688B5E482963911D00ACFD32 /* XCoordinatorCombine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 688B5E452963911D00ACFD32 /* XCRemoteSwiftPackageReference "XCoordinator" */;
+			productName = XCoordinatorCombine;
+		};
+		688B5E4A2963911D00ACFD32 /* XCoordinatorRx */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 688B5E452963911D00ACFD32 /* XCRemoteSwiftPackageReference "XCoordinator" */;
+			productName = XCoordinatorRx;
 		};
 /* End XCSwiftPackageProductDependency section */
 
