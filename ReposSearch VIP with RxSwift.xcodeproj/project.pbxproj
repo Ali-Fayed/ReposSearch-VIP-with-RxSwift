@@ -14,7 +14,7 @@
 		6881B1AD295B1E5C001512B4 /* RxSwift_with_DI_and_UnitTesting.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1AB295B1E5C001512B4 /* RxSwift_with_DI_and_UnitTesting.xcdatamodeld */; };
 		6881B1AF295B1E5D001512B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6881B1AE295B1E5D001512B4 /* Assets.xcassets */; };
 		6881B1B2295B1E5D001512B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6881B1B0295B1E5D001512B4 /* LaunchScreen.storyboard */; };
-		6881B1BD295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1BC295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingTests.swift */; };
+		6881B1BD295B1E5D001512B4 /* ReposSearch_VIP_with_RxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1BC295B1E5D001512B4 /* ReposSearch_VIP_with_RxSwiftTests.swift */; };
 		6881B1C7295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1C6295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITests.swift */; };
 		6881B1C9295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1C8295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITestsLaunchTests.swift */; };
 		6881B1E0295B1F93001512B4 /* ReposVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1DF295B1F93001512B4 /* ReposVCModel.swift */; };
@@ -76,7 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6881B19F295B1E5C001512B4 /* RxSwift with DI and UnitTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxSwift with DI and UnitTesting.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6881B19F295B1E5C001512B4 /* ReposSearch VIP with RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReposSearch VIP with RxSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6881B1A2295B1E5C001512B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6881B1A4295B1E5C001512B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6881B1A6295B1E5C001512B4 /* ReposViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposViewController.swift; sourceTree = "<group>"; };
@@ -85,9 +85,9 @@
 		6881B1AE295B1E5D001512B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6881B1B1295B1E5D001512B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6881B1B3295B1E5D001512B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6881B1B8295B1E5D001512B4 /* RxSwift with DI and UnitTestingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxSwift with DI and UnitTestingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6881B1BC295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwift_with_DI_and_UnitTestingTests.swift; sourceTree = "<group>"; };
-		6881B1C2295B1E5D001512B4 /* RxSwift with DI and UnitTestingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxSwift with DI and UnitTestingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6881B1B8295B1E5D001512B4 /* ReposSearch VIP with RxSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReposSearch VIP with RxSwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6881B1BC295B1E5D001512B4 /* ReposSearch_VIP_with_RxSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposSearch_VIP_with_RxSwiftTests.swift; sourceTree = "<group>"; };
+		6881B1C2295B1E5D001512B4 /* ReposSearch VIP with RxSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReposSearch VIP with RxSwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6881B1C6295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwift_with_DI_and_UnitTestingUITests.swift; sourceTree = "<group>"; };
 		6881B1C8295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwift_with_DI_and_UnitTestingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6881B1DF295B1F93001512B4 /* ReposVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposVCModel.swift; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 		6881B196295B1E5C001512B4 = {
 			isa = PBXGroup;
 			children = (
-				6881B1A1295B1E5C001512B4 /* RxSwift with DI and UnitTesting */,
+				6881B1A1295B1E5C001512B4 /* ReposSearch VIP with RxSwift */,
 				6881B1BB295B1E5D001512B4 /* RxSwift with DI and UnitTestingTests */,
 				6881B1C5295B1E5D001512B4 /* RxSwift with DI and UnitTestingUITests */,
 				6881B1A0295B1E5C001512B4 /* Products */,
@@ -169,14 +169,14 @@
 		6881B1A0295B1E5C001512B4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6881B19F295B1E5C001512B4 /* RxSwift with DI and UnitTesting.app */,
-				6881B1B8295B1E5D001512B4 /* RxSwift with DI and UnitTestingTests.xctest */,
-				6881B1C2295B1E5D001512B4 /* RxSwift with DI and UnitTestingUITests.xctest */,
+				6881B19F295B1E5C001512B4 /* ReposSearch VIP with RxSwift.app */,
+				6881B1B8295B1E5D001512B4 /* ReposSearch VIP with RxSwiftTests.xctest */,
+				6881B1C2295B1E5D001512B4 /* ReposSearch VIP with RxSwiftUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6881B1A1295B1E5C001512B4 /* RxSwift with DI and UnitTesting */ = {
+		6881B1A1295B1E5C001512B4 /* ReposSearch VIP with RxSwift */ = {
 			isa = PBXGroup;
 			children = (
 				6881B1DA295B1EC3001512B4 /* AppDelegate */,
@@ -185,13 +185,13 @@
 				688B5E5B2963992C00ACFD32 /* Helpers */,
 				6881B1B3295B1E5D001512B4 /* Info.plist */,
 			);
-			path = "RxSwift with DI and UnitTesting";
+			path = "ReposSearch VIP with RxSwift";
 			sourceTree = "<group>";
 		};
 		6881B1BB295B1E5D001512B4 /* RxSwift with DI and UnitTestingTests */ = {
 			isa = PBXGroup;
 			children = (
-				6881B1BC295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingTests.swift */,
+				6881B1BC295B1E5D001512B4 /* ReposSearch_VIP_with_RxSwiftTests.swift */,
 			);
 			path = "RxSwift with DI and UnitTestingTests";
 			sourceTree = "<group>";
@@ -395,9 +395,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6881B19E295B1E5C001512B4 /* RxSwift with DI and UnitTesting */ = {
+		6881B19E295B1E5C001512B4 /* ReposSearch VIP with RxSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6881B1CC295B1E5D001512B4 /* Build configuration list for PBXNativeTarget "RxSwift with DI and UnitTesting" */;
+			buildConfigurationList = 6881B1CC295B1E5D001512B4 /* Build configuration list for PBXNativeTarget "ReposSearch VIP with RxSwift" */;
 			buildPhases = (
 				6881B19B295B1E5C001512B4 /* Sources */,
 				6881B19C295B1E5C001512B4 /* Frameworks */,
@@ -407,7 +407,7 @@
 			);
 			dependencies = (
 			);
-			name = "RxSwift with DI and UnitTesting";
+			name = "ReposSearch VIP with RxSwift";
 			packageProductDependencies = (
 				688B5E2C295C905B00ACFD32 /* RxAlamofire */,
 				688B5E2F295C907B00ACFD32 /* Swinject */,
@@ -418,12 +418,12 @@
 				688B5E602963A32D00ACFD32 /* Kingfisher */,
 			);
 			productName = "RxSwift with DI and UnitTesting";
-			productReference = 6881B19F295B1E5C001512B4 /* RxSwift with DI and UnitTesting.app */;
+			productReference = 6881B19F295B1E5C001512B4 /* ReposSearch VIP with RxSwift.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6881B1B7295B1E5D001512B4 /* RxSwift with DI and UnitTestingTests */ = {
+		6881B1B7295B1E5D001512B4 /* ReposSearch VIP with RxSwiftTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6881B1CF295B1E5D001512B4 /* Build configuration list for PBXNativeTarget "RxSwift with DI and UnitTestingTests" */;
+			buildConfigurationList = 6881B1CF295B1E5D001512B4 /* Build configuration list for PBXNativeTarget "ReposSearch VIP with RxSwiftTests" */;
 			buildPhases = (
 				6881B1B4295B1E5D001512B4 /* Sources */,
 				6881B1B5295B1E5D001512B4 /* Frameworks */,
@@ -434,14 +434,14 @@
 			dependencies = (
 				6881B1BA295B1E5D001512B4 /* PBXTargetDependency */,
 			);
-			name = "RxSwift with DI and UnitTestingTests";
+			name = "ReposSearch VIP with RxSwiftTests";
 			productName = "RxSwift with DI and UnitTestingTests";
-			productReference = 6881B1B8295B1E5D001512B4 /* RxSwift with DI and UnitTestingTests.xctest */;
+			productReference = 6881B1B8295B1E5D001512B4 /* ReposSearch VIP with RxSwiftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		6881B1C1295B1E5D001512B4 /* RxSwift with DI and UnitTestingUITests */ = {
+		6881B1C1295B1E5D001512B4 /* ReposSearch VIP with RxSwiftUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6881B1D2295B1E5D001512B4 /* Build configuration list for PBXNativeTarget "RxSwift with DI and UnitTestingUITests" */;
+			buildConfigurationList = 6881B1D2295B1E5D001512B4 /* Build configuration list for PBXNativeTarget "ReposSearch VIP with RxSwiftUITests" */;
 			buildPhases = (
 				6881B1BE295B1E5D001512B4 /* Sources */,
 				6881B1BF295B1E5D001512B4 /* Frameworks */,
@@ -452,9 +452,9 @@
 			dependencies = (
 				6881B1C4295B1E5D001512B4 /* PBXTargetDependency */,
 			);
-			name = "RxSwift with DI and UnitTestingUITests";
+			name = "ReposSearch VIP with RxSwiftUITests";
 			productName = "RxSwift with DI and UnitTestingUITests";
-			productReference = 6881B1C2295B1E5D001512B4 /* RxSwift with DI and UnitTestingUITests.xctest */;
+			productReference = 6881B1C2295B1E5D001512B4 /* ReposSearch VIP with RxSwiftUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -480,7 +480,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6881B19A295B1E5C001512B4 /* Build configuration list for PBXProject "RxSwift with DI and UnitTesting" */;
+			buildConfigurationList = 6881B19A295B1E5C001512B4 /* Build configuration list for PBXProject "ReposSearch VIP with RxSwift" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -500,9 +500,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6881B19E295B1E5C001512B4 /* RxSwift with DI and UnitTesting */,
-				6881B1B7295B1E5D001512B4 /* RxSwift with DI and UnitTestingTests */,
-				6881B1C1295B1E5D001512B4 /* RxSwift with DI and UnitTestingUITests */,
+				6881B19E295B1E5C001512B4 /* ReposSearch VIP with RxSwift */,
+				6881B1B7295B1E5D001512B4 /* ReposSearch VIP with RxSwiftTests */,
+				6881B1C1295B1E5D001512B4 /* ReposSearch VIP with RxSwiftUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -582,7 +582,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6881B1BD295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingTests.swift in Sources */,
+				6881B1BD295B1E5D001512B4 /* ReposSearch_VIP_with_RxSwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,12 +600,12 @@
 /* Begin PBXTargetDependency section */
 		6881B1BA295B1E5D001512B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6881B19E295B1E5C001512B4 /* RxSwift with DI and UnitTesting */;
+			target = 6881B19E295B1E5C001512B4 /* ReposSearch VIP with RxSwift */;
 			targetProxy = 6881B1B9295B1E5D001512B4 /* PBXContainerItemProxy */;
 		};
 		6881B1C4295B1E5D001512B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6881B19E295B1E5C001512B4 /* RxSwift with DI and UnitTesting */;
+			target = 6881B19E295B1E5C001512B4 /* ReposSearch VIP with RxSwift */;
 			targetProxy = 6881B1C3295B1E5D001512B4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -753,7 +753,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H368HQSP2D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "RxSwift with DI and UnitTesting/Info.plist";
+				INFOPLIST_FILE = "ReposSearch VIP with RxSwift/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -781,7 +781,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H368HQSP2D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "RxSwift with DI and UnitTesting/Info.plist";
+				INFOPLIST_FILE = "ReposSearch VIP with RxSwift/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -816,7 +816,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxSwift with DI and UnitTesting.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RxSwift with DI and UnitTesting";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReposSearch VIP with RxSwift.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ReposSearch VIP with RxSwift";
 			};
 			name = Debug;
 		};
@@ -836,7 +836,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxSwift with DI and UnitTesting.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RxSwift with DI and UnitTesting";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReposSearch VIP with RxSwift.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ReposSearch VIP with RxSwift";
 			};
 			name = Release;
 		};
@@ -879,7 +879,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6881B19A295B1E5C001512B4 /* Build configuration list for PBXProject "RxSwift with DI and UnitTesting" */ = {
+		6881B19A295B1E5C001512B4 /* Build configuration list for PBXProject "ReposSearch VIP with RxSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6881B1CA295B1E5D001512B4 /* Debug */,
@@ -888,7 +888,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6881B1CC295B1E5D001512B4 /* Build configuration list for PBXNativeTarget "RxSwift with DI and UnitTesting" */ = {
+		6881B1CC295B1E5D001512B4 /* Build configuration list for PBXNativeTarget "ReposSearch VIP with RxSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6881B1CD295B1E5D001512B4 /* Debug */,
@@ -897,7 +897,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6881B1CF295B1E5D001512B4 /* Build configuration list for PBXNativeTarget "RxSwift with DI and UnitTestingTests" */ = {
+		6881B1CF295B1E5D001512B4 /* Build configuration list for PBXNativeTarget "ReposSearch VIP with RxSwiftTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6881B1D0295B1E5D001512B4 /* Debug */,
@@ -906,7 +906,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6881B1D2295B1E5D001512B4 /* Build configuration list for PBXNativeTarget "RxSwift with DI and UnitTestingUITests" */ = {
+		6881B1D2295B1E5D001512B4 /* Build configuration list for PBXNativeTarget "ReposSearch VIP with RxSwiftUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6881B1D3295B1E5D001512B4 /* Debug */,
