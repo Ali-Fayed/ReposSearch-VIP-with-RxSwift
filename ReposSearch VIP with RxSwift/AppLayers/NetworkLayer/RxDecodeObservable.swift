@@ -1,6 +1,6 @@
 //
 //  Observable.swift
-//  RxSwift with DI and UnitTesting
+//  ReposSearch VIP with RxSwift
 //
 //  Created by Ali Fayed on 01/01/2023.
 //
@@ -28,17 +28,5 @@ extension Observable where Element == (HTTPURLResponse, Data){
                 return .failure(apiErrorMessage)
             }
         }
-    }
-}
-enum ApiResult<Value, Error>{
-    case success(Value)
-    case failure(Error)
-    
-    init(value: Value){
-        self = .success(value)
-    }
-    
-    init(error: Error){
-        self = .failure(error)
     }
 }

@@ -1,13 +1,13 @@
 //
-//  RxSwift_with_DI_and_UnitTestingUITests.swift
-//  RxSwift with DI and UnitTestingUITests
+//  RReposSearch_VIP_with_RxSwiftUITests.swift
+//  ReposSearch VIP with RxSwiftUITests
 //
 //  Created by Ali Fayed on 27/12/2022.
 //
 
 import XCTest
 
-final class RxSwift_with_DI_and_UnitTestingUITests: XCTestCase {
+final class ReposSearch_VIP_with_RxSwiftUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

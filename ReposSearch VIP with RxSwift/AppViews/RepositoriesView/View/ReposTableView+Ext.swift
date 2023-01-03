@@ -1,13 +1,12 @@
 //
 //  ReposTableView+Ext.swift
-//  RxSwift with DI and UnitTesting
+//  ReposSearch VIP with RxSwift
 //
 //  Created by Ali Fayed on 02/01/2023.
 //
 import UIKit
 import RxSwift
 import SwiftUI
-import SafariServices
 import RxDataSources
 extension ReposViewController {
     // MARK: - TableView Methods
@@ -22,7 +21,7 @@ extension ReposViewController {
             .bind { [weak self] indexPath, repos in
                 guard let self = self else { return }
                 self.tableView.deselectRow(at: indexPath, animated: true)
-                self.openRepoInSafari(url: repos.repositoryURL)
+                self.dataSource.router?.trigger(.safariView(url: repos.repositoryURL))
             }.disposed(by: disposeBag)
     }
     func tableViewPrefetch() {
@@ -47,7 +46,7 @@ extension ReposViewController {
     // MARK: - Other Methods
     func tableViewDataSource() -> RxTableViewSectionedReloadDataSource<ReposSectionModel> {
         /// handle tableView data source with sections
-        let dataSource = RxTableViewSectionedReloadDataSource<ReposSectionModel>(
+        let tableViewDataSource = RxTableViewSectionedReloadDataSource<ReposSectionModel>(
             configureCell: { (_ , tableView, indexPath, repo) in
                 let cell = tableView.dequeueReusableCell(withIdentifier: ReposVCConstants.cellIdentifier, for: indexPath)
                 if #available(iOS 16.0, *) {
@@ -59,28 +58,18 @@ extension ReposViewController {
                     /// normal case us basic label only
                     cell.textLabel?.text = repo.repoFullName
                 }
-                
-                cell.textLabel?.text = repo.repoFullName
                 return cell
             },
+            /// section handling
             titleForHeaderInSection: { dataSource, sectionIndex in
                 return dataSource[sectionIndex].header
             }
         )
-        return dataSource
+        return tableViewDataSource
     }
     func reposCellSwiftUI(repo: Repository) -> some View {
         /// swiftui cell for reposTableView
         return ReposListCell(userAvatar: repo.repoOwnerAvatarURL, userName: repo.repoOwnerName, repoName: repo.repositoryName, repoDescription: repo.repositoryDescription ?? "", repoStarsCount: "\(repo.repositoryStars ?? 1)", repoLanguage: repo.repositoryLanguage ?? "", repoLanguageCircleColor: "")
-    }
-    func openRepoInSafari(url: String) {
-        /// open link in safariVC
-        if let url = URL(string: url) {
-              let config = SFSafariViewController.Configuration()
-              config.entersReaderIfAvailable = true
-              let vc = SFSafariViewController(url: url, configuration: config)
-              self.present(vc, animated: true)
-           }
     }
     func fetchMoreRepos(indexPaths: [IndexPath]) {
         /// add new page every time we reach the last item in the tableView and load more data

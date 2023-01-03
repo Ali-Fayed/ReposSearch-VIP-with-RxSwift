@@ -15,8 +15,8 @@
 		6881B1AF295B1E5D001512B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6881B1AE295B1E5D001512B4 /* Assets.xcassets */; };
 		6881B1B2295B1E5D001512B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6881B1B0295B1E5D001512B4 /* LaunchScreen.storyboard */; };
 		6881B1BD295B1E5D001512B4 /* ReposSearch_VIP_with_RxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1BC295B1E5D001512B4 /* ReposSearch_VIP_with_RxSwiftTests.swift */; };
-		6881B1C7295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1C6295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITests.swift */; };
-		6881B1C9295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1C8295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITestsLaunchTests.swift */; };
+		6881B1C7295B1E5D001512B4 /* ReposSearch_VIP_with_RxSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1C6295B1E5D001512B4 /* ReposSearch_VIP_with_RxSwiftUITests.swift */; };
+		6881B1C9295B1E5D001512B4 /* ReposSearch_VIP_with_RxSwiftLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1C8295B1E5D001512B4 /* ReposSearch_VIP_with_RxSwiftLaunchTests.swift */; };
 		6881B1E0295B1F93001512B4 /* ReposVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1DF295B1F93001512B4 /* ReposVCModel.swift */; };
 		6881B1E2295B1FD4001512B4 /* ReposJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1E1295B1FD4001512B4 /* ReposJSONModel.swift */; };
 		6881B1EB295B2145001512B4 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6881B1E4295B2145001512B4 /* RequestInterceptor.swift */; };
@@ -58,6 +58,7 @@
 		688B5E632963A7D500ACFD32 /* UIAlertController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E622963A7D500ACFD32 /* UIAlertController+Ext.swift */; };
 		688B5E872963C0E300ACFD32 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 688B5E862963C0E300ACFD32 /* RxDataSources */; };
 		688B5E892963C14B00ACFD32 /* ReposViewSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E882963C14B00ACFD32 /* ReposViewSectionModel.swift */; };
+		688B5E8C2964414500ACFD32 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688B5E8B2964414500ACFD32 /* APIResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,8 +91,8 @@
 		6881B1B8295B1E5D001512B4 /* ReposSearch VIP with RxSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReposSearch VIP with RxSwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6881B1BC295B1E5D001512B4 /* ReposSearch_VIP_with_RxSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposSearch_VIP_with_RxSwiftTests.swift; sourceTree = "<group>"; };
 		6881B1C2295B1E5D001512B4 /* ReposSearch VIP with RxSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReposSearch VIP with RxSwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6881B1C6295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwift_with_DI_and_UnitTestingUITests.swift; sourceTree = "<group>"; };
-		6881B1C8295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwift_with_DI_and_UnitTestingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6881B1C6295B1E5D001512B4 /* ReposSearch_VIP_with_RxSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposSearch_VIP_with_RxSwiftUITests.swift; sourceTree = "<group>"; };
+		6881B1C8295B1E5D001512B4 /* ReposSearch_VIP_with_RxSwiftLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposSearch_VIP_with_RxSwiftLaunchTests.swift; sourceTree = "<group>"; };
 		6881B1DF295B1F93001512B4 /* ReposVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposVCModel.swift; sourceTree = "<group>"; };
 		6881B1E1295B1FD4001512B4 /* ReposJSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposJSONModel.swift; sourceTree = "<group>"; };
 		6881B1E4295B2145001512B4 /* RequestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 		688B5E512963918800ACFD32 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		688B5E622963A7D500ACFD32 /* UIAlertController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Ext.swift"; sourceTree = "<group>"; };
 		688B5E882963C14B00ACFD32 /* ReposViewSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposViewSectionModel.swift; sourceTree = "<group>"; };
+		688B5E8B2964414500ACFD32 /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,8 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				6881B1A1295B1E5C001512B4 /* ReposSearch VIP with RxSwift */,
-				6881B1BB295B1E5D001512B4 /* RxSwift with DI and UnitTestingTests */,
-				6881B1C5295B1E5D001512B4 /* RxSwift with DI and UnitTestingUITests */,
+				6881B1BB295B1E5D001512B4 /* ReposSearch VIP with RxSwiftTests */,
+				6881B1C5295B1E5D001512B4 /* ReposSearch VIP with RxSwiftUITests */,
 				6881B1A0295B1E5C001512B4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				6881B1DA295B1EC3001512B4 /* AppDelegate */,
+				688B5E8A29643EEE00ACFD32 /* AppLayers */,
 				6881B1DB295B1ECD001512B4 /* AppViews */,
 				6881B1DC295B1ED7001512B4 /* Storyboard */,
 				688B5E5B2963992C00ACFD32 /* Helpers */,
@@ -192,21 +195,21 @@
 			path = "ReposSearch VIP with RxSwift";
 			sourceTree = "<group>";
 		};
-		6881B1BB295B1E5D001512B4 /* RxSwift with DI and UnitTestingTests */ = {
+		6881B1BB295B1E5D001512B4 /* ReposSearch VIP with RxSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
 				6881B1BC295B1E5D001512B4 /* ReposSearch_VIP_with_RxSwiftTests.swift */,
 			);
-			path = "RxSwift with DI and UnitTestingTests";
+			path = "ReposSearch VIP with RxSwiftTests";
 			sourceTree = "<group>";
 		};
-		6881B1C5295B1E5D001512B4 /* RxSwift with DI and UnitTestingUITests */ = {
+		6881B1C5295B1E5D001512B4 /* ReposSearch VIP with RxSwiftUITests */ = {
 			isa = PBXGroup;
 			children = (
-				6881B1C6295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITests.swift */,
-				6881B1C8295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITestsLaunchTests.swift */,
+				6881B1C6295B1E5D001512B4 /* ReposSearch_VIP_with_RxSwiftUITests.swift */,
+				6881B1C8295B1E5D001512B4 /* ReposSearch_VIP_with_RxSwiftLaunchTests.swift */,
 			);
-			path = "RxSwift with DI and UnitTestingUITests";
+			path = "ReposSearch VIP with RxSwiftUITests";
 			sourceTree = "<group>";
 		};
 		6881B1DA295B1EC3001512B4 /* AppDelegate */ = {
@@ -264,6 +267,7 @@
 				6881B1EA295B2145001512B4 /* NetworkMonitor.swift */,
 				6881B21E295B5B79001512B4 /* NetworkRequestValues.swift */,
 				688B5E312961A7E300ACFD32 /* RxDecodeObservable.swift */,
+				688B5E8B2964414500ACFD32 /* APIResult.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -331,22 +335,20 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		688B5E4C2963918800ACFD32 /* Navigation */ = {
+		688B5E4C2963918800ACFD32 /* NavigationLayer */ = {
 			isa = PBXGroup;
 			children = (
 				688B5E512963918800ACFD32 /* AppCoordinator.swift */,
 				688B5E4F2963918800ACFD32 /* TabBarCoordinator.swift */,
 				688B5E502963918800ACFD32 /* RepoCoordinator.swift */,
 			);
-			path = Navigation;
+			path = NavigationLayer;
 			sourceTree = "<group>";
 		};
 		688B5E5B2963992C00ACFD32 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				688B5E4C2963918800ACFD32 /* Navigation */,
 				6881B212295B52B9001512B4 /* NetworkModels */,
-				6881B1E3295B2145001512B4 /* NetworkLayer */,
 				6881B220295B5C65001512B4 /* Extentions */,
 				6881B1DD295B1EE2001512B4 /* Resources */,
 			);
@@ -395,6 +397,15 @@
 				6881B1DF295B1F93001512B4 /* ReposVCModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		688B5E8A29643EEE00ACFD32 /* AppLayers */ = {
+			isa = PBXGroup;
+			children = (
+				688B5E4C2963918800ACFD32 /* NavigationLayer */,
+				6881B1E3295B2145001512B4 /* NetworkLayer */,
+			);
+			path = AppLayers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -567,6 +578,7 @@
 				6881B1E0295B1F93001512B4 /* ReposVCModel.swift in Sources */,
 				6881B21F295B5B79001512B4 /* NetworkRequestValues.swift in Sources */,
 				688B5E322961A7E300ACFD32 /* RxDecodeObservable.swift in Sources */,
+				688B5E8C2964414500ACFD32 /* APIResult.swift in Sources */,
 				6881B206295B33E6001512B4 /* ReposViewDisplay.swift in Sources */,
 				6881B1AD295B1E5C001512B4 /* RxSwift_with_DI_and_UnitTesting.xcdatamodeld in Sources */,
 				6881B21D295B5983001512B4 /* Storyboard+Ext.swift in Sources */,
@@ -598,8 +610,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6881B1C9295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITestsLaunchTests.swift in Sources */,
-				6881B1C7295B1E5D001512B4 /* RxSwift_with_DI_and_UnitTestingUITests.swift in Sources */,
+				6881B1C9295B1E5D001512B4 /* ReposSearch_VIP_with_RxSwiftLaunchTests.swift in Sources */,
+				6881B1C7295B1E5D001512B4 /* ReposSearch_VIP_with_RxSwiftUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

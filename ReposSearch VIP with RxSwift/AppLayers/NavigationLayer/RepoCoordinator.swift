@@ -1,14 +1,16 @@
 //
 //  RepoCoordinator.swift
-//  RxSwift with DI and UnitTesting
+//  ReposSearch VIP with RxSwift
 //
 //  Created by Ali Fayed on 01/01/2023.
 //
 import XCoordinator
 import UIKit
 import Swinject
+import SafariServices
 enum RepoTabRouter: Route {
     case repoTab
+    case safariView(url: String)
 }
 class RepoCoordinator: NavigationCoordinator<RepoTabRouter> {
     init() {
@@ -27,6 +29,15 @@ class RepoCoordinator: NavigationCoordinator<RepoTabRouter> {
             view.navigationItem.title = ReposVCConstants.viewTitle
             view.dataSource.router = unownedRouter
             return .push(view)
+        case .safariView(let url):
+            var safarViewController: SFSafariViewController!
+            if let url = URL(string: url) {
+                  let config = SFSafariViewController.Configuration()
+                  config.entersReaderIfAvailable = true
+                  let vc = SFSafariViewController(url: url, configuration: config)
+                  safarViewController = vc
+               }
+            return .present(safarViewController)
         }
     }
 }

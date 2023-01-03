@@ -1,13 +1,13 @@
 //
-//  RxSwift_with_DI_and_UnitTestingUITestsLaunchTests.swift
-//  RxSwift with DI and UnitTestingUITests
+//  ReposSearch_VIP_with_RxSwiftLaunchTests.swift
+//  ReposSearch VIP with RxSwiftUITests
 //
 //  Created by Ali Fayed on 27/12/2022.
 //
 
 import XCTest
 
-final class RxSwift_with_DI_and_UnitTestingUITestsLaunchTests: XCTestCase {
+final class ReposSearch_VIP_with_RxSwiftLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

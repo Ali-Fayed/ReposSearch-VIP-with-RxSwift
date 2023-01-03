@@ -1,6 +1,6 @@
 //
 //  ReposSearchBar+Ext.swift
-//  RxSwift with DI and UnitTesting
+//  ReposSearch VIP with RxSwift
 //
 //  Created by Ali Fayed on 02/01/2023.
 //

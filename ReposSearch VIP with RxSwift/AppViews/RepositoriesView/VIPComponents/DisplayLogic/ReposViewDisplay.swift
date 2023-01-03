@@ -1,6 +1,6 @@
 //
 //  ReposViewDisplay.swift
-//  RxSwift with DI and UnitTesting
+//  ReposSearch VIP with RxSwift
 //
 //  Created by Ali Fayed on 27/12/2022.
 //
@@ -21,7 +21,7 @@ class ReposViewDisplay: UIViewController, ReposDisplayLogic {
             /// append to the current subject values with new data
             dataSource.reposData.append(contentsOf: viewModel.repos)
         }
-        /// sectioned tableView data source if we need to add a section name
+        /// sectioned tableView data source if we need to add a section name or more sections
         let section = ReposSectionModel(header: ReposVCConstants.firstSectionName, items: dataSource.reposData)
         dataSource.reposSubject.onNext([section])
     }
