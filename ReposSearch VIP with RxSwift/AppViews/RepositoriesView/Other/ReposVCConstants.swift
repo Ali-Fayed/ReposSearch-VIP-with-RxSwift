@@ -15,4 +15,5 @@ struct ReposVCConstants {
     static let darkColor = "darkColor"
     static let starImage = "star.fill"
     static let circleImage = "circle.fill"
+    static let firstSectionName = ""
 }

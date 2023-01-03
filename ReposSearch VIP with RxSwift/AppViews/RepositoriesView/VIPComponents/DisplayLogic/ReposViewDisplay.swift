@@ -17,12 +17,13 @@ class ReposViewDisplay: UIViewController, ReposDisplayLogic {
         if dataSource.isSearching.value {
             /// replace the current subject values with new that come from search
             dataSource.reposData = viewModel.repos
-            dataSource.reposSubject.onNext(dataSource.reposData)
         } else {
             /// append to the current subject values with new data
             dataSource.reposData.append(contentsOf: viewModel.repos)
-            dataSource.reposSubject.onNext(dataSource.reposData)
         }
+        /// sectioned tableView data source if we need to add a section name
+        let section = ReposSectionModel(header: ReposVCConstants.firstSectionName, items: dataSource.reposData)
+        dataSource.reposSubject.onNext([section])
     }
     func displayVCwithError(error: error) {
         /// send error model to the UI

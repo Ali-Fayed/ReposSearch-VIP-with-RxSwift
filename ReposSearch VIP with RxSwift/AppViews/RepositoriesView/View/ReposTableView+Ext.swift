@@ -8,23 +8,12 @@ import UIKit
 import RxSwift
 import SwiftUI
 import SafariServices
+import RxDataSources
 extension ReposViewController {
     // MARK: - TableView Methods
     func tableViewDataBinding() {
-        /// bind data from publishSubject to tableView this like cellForRowAt method
-        dataSource.reposSubject.bind(to: tableView.rx.items(cellIdentifier: ReposVCConstants.cellIdentifier, cellType: UITableViewCell.self)) { [weak self] row, repo, cell in
-            guard let self = self else { return }
-            /// iOS 16 new feature let us write swiftu view as a tableViewCell
-            if #available(iOS 16.0, *) {
-                let hostingConfiguration = UIHostingConfiguration {
-                    self.reposCellSwiftUI(repo: repo)
-                }
-                cell.contentConfiguration = hostingConfiguration
-            } else {
-                /// normal case us basic label only
-                cell.textLabel?.text = repo.repoFullName
-            }
-        }.disposed(by: disposeBag)
+        /// bind data from observale to tableView this like cellForRowAt method with rxData source if we need a sections
+        dataSource.reposListObservable.bind(to: tableView.rx.items(dataSource: tableViewDataSource())).disposed(by: disposeBag)
     }
     func tableViewCellSelection() {
         /// zip two observables to retrieve item and model selection
@@ -56,6 +45,30 @@ extension ReposViewController {
         }).disposed(by: disposeBag)
     }
     // MARK: - Other Methods
+    func tableViewDataSource() -> RxTableViewSectionedReloadDataSource<ReposSectionModel> {
+        /// handle tableView data source with sections
+        let dataSource = RxTableViewSectionedReloadDataSource<ReposSectionModel>(
+            configureCell: { (_ , tableView, indexPath, repo) in
+                let cell = tableView.dequeueReusableCell(withIdentifier: ReposVCConstants.cellIdentifier, for: indexPath)
+                if #available(iOS 16.0, *) {
+                    let hostingConfiguration = UIHostingConfiguration {
+                        self.reposCellSwiftUI(repo: repo)
+                    }
+                    cell.contentConfiguration = hostingConfiguration
+                } else {
+                    /// normal case us basic label only
+                    cell.textLabel?.text = repo.repoFullName
+                }
+                
+                cell.textLabel?.text = repo.repoFullName
+                return cell
+            },
+            titleForHeaderInSection: { dataSource, sectionIndex in
+                return dataSource[sectionIndex].header
+            }
+        )
+        return dataSource
+    }
     func reposCellSwiftUI(repo: Repository) -> some View {
         /// swiftui cell for reposTableView
         return ReposListCell(userAvatar: repo.repoOwnerAvatarURL, userName: repo.repoOwnerName, repoName: repo.repositoryName, repoDescription: repo.repositoryDescription ?? "", repoStarsCount: "\(repo.repositoryStars ?? 1)", repoLanguage: repo.repositoryLanguage ?? "", repoLanguageCircleColor: "")

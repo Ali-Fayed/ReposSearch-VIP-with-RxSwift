@@ -9,7 +9,8 @@ import RxCocoa
 import XCoordinator
 class ReposDataSource {
     // MARK: - Rx Properties
-    let reposSubject = PublishSubject<[Repository]>()
+    let reposSubject = PublishSubject<[ReposSectionModel]>()
+    var reposListObservable: Observable<[ReposSectionModel]> { return reposSubject }
     var isSearching = BehaviorRelay<Bool>(value: false)
     let showLoading = BehaviorRelay<Bool>(value: true)
     let errorBehaviour = BehaviorRelay<ApiError>(value: ApiError(message: "", documentation_url: ""))
