@@ -23,6 +23,11 @@
 - All Example Files Have a Comments For Easy Understanding The Responsibilities For Methods And Files
 - Using Swift Package Manger Instead of CocoaPods.
 
+## More Resources: 
+
+- iOS Academy [Video][Swinject Resource] for [Swinject][Swinject]
+- Kodeco Article For [VIP Pattern][VIP Clean Architecture]
+
 [contact]: https://www.linkedin.com/in/ali-fayed-8682aa1a6/
 [fb]: https://www.facebook.com/alifayed26/
 [tw]: https://www.twitter.com/Aliifayed
@@ -36,6 +41,8 @@
 [SOLID Principles]: https://www.kodeco.com/21503974-solid-principles-for-ios-apps
 [UIHostingConfiguration]: https://developer.apple.com/documentation/SwiftUI/UIHostingConfiguration
 [Advanced Alamofire]: https://www.kodeco.com/11668143-alamofire-tutorial-for-ios-advanced-usage
+[Swinject Resource]: https://www.youtube.com/watch?v=9rT5TksdJ-8&t=495s
+
 
 ## Contact Me:
 
