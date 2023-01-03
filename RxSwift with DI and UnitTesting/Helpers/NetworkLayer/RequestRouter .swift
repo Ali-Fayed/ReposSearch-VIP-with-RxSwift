@@ -48,9 +48,6 @@ extension RequestRouter: URLRequestConvertible {
         request.method = method
         if method == .get {
             request = try URLEncodedFormParameterEncoder().encode(parameters, into: request)
-        } else if method == .post {
-            request = try JSONParameterEncoder().encode(parameters, into: request)
-            request.setValue("application/json", forHTTPHeaderField: "Accept")
         }
         return request
     }

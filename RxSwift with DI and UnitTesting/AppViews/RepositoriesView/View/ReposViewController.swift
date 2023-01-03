@@ -26,18 +26,22 @@ class ReposViewController: ReposViewDisplay {
     }
     // MARK: - Main ViewController Methods
     private func initView() {
+        /// add any UIView methods here
         initTableView()
         initSearchController()
     }
     private func initStates() {
+        /// add any state methods here
         handleLoadingState()
         handleErrorState()
     }
     private func initData() {
+        /// add any data methods here
         fetchRepos()
     }
     // MARK: - TableView Methods
     private func initTableView() {
+        /// add any tableView configurations here
         tableViewDataBinding()
         tableViewCellSelection()
         tableViewRefresh()
@@ -45,6 +49,7 @@ class ReposViewController: ReposViewDisplay {
     }
     // MARK: - SearchController Methods
     private func initSearchController() {
+        /// add any searchController configurations here
         addSearchControllerInNavigationController(search: searchController, placeholder: ReposVCConstants.searchPlaceholder)
         searchBarCancelButtonClicked()
         searchBarSearchButtonClicked()
@@ -52,10 +57,12 @@ class ReposViewController: ReposViewDisplay {
     }
     // MARK: - State Methods
     private func handleLoadingState() {
+        /// handle loading state to show loading indicator at the start
         showActivityIndicator(activityIndicatorView: activityIndicatorView)
         interactor?.showLoading.asObservable().observe(on: MainScheduler.instance).bind(to: activityIndicatorView.rx.isAnimating).disposed(by: disposeBag)
     }
     private func handleErrorState() {
+        /// show alert when api request return with error
         dataSource.errorBehaviour.subscribe { [weak self] error in
             guard let self = self else { return }
             if self.dataSource.errorBehaviour.value.message != "" {
@@ -65,6 +72,7 @@ class ReposViewController: ReposViewDisplay {
     }
     // MARK: - Data Methods
     func fetchRepos() {
+        /// fetch repos from interactor
         let request = ReposVCModel.Request()
         interactor?.fetchRepositories(request: request, page: dataSource.pageNo, query: dataSource.searchText, isPaginating: false)
     }

@@ -18,7 +18,6 @@ class HomeTabBarCoordinator: TabBarCoordinator<TabBarRoute> {
         repoCoordinator.rootViewController.navigationItem.largeTitleDisplayMode = .always
         repoCoordinator.rootViewController.tabBarItem =
         UITabBarItem(title: ReposVCConstants.viewTitle, image: UIImage(systemName: ReposVCConstants.tabBarImage), selectedImage: UIImage(systemName: ReposVCConstants.tabBarImage))
-        //
         self.init(repoTabRouter: repoCoordinator.strongRouter)
     }
     init(repoTabRouter: StrongRouter<RepoTabRouter>) {

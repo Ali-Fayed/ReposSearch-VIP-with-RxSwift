@@ -6,6 +6,6 @@
 //
 import RxSwift
 protocol FetchReposUseCase {
-    typealias reposObservable = (Observable<ApiResult<Repositories, ApiError>>)
-    func excute(page: Int, query: String) -> reposObservable
+    typealias observable = (Observable<ApiResult<Repositories, ApiError>>)
+    func excute(page: Int, query: String) -> observable
 }

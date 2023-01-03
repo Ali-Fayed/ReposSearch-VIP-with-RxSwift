@@ -4,10 +4,8 @@
 //
 //  Created by Ali Fayed on 27/12/2022.
 //
-
 import Alamofire
 import Foundation
-
 class RequestIntercptor: RequestInterceptor {
   let retryLimit = 5
   let retryDelay: TimeInterval = 10

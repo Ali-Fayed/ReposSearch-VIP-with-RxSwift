@@ -11,11 +11,11 @@ import Alamofire
 struct NetworkManger {
     static let shared = NetworkManger()
     let afSession: Session = {
-        let networkLogger = NetworkLogger()
+        let eventMonitor = NetworkLogger()
         let interceptor = RequestIntercptor()
         return Session(
             interceptor: interceptor,
-            eventMonitors: [networkLogger])
+            eventMonitors: [eventMonitor])
     }()
     func performRequest<T: Decodable>(requestValues: NetworkRequestValues<T>) -> (Observable<ApiResult<T, ApiError>>) {
         return self.afSession.rx.request(urlRequest: requestValues.requestRouter)

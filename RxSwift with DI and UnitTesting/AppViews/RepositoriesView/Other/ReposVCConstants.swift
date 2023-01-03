@@ -7,9 +7,12 @@
 import Foundation
 struct ReposVCConstants {
     static let cellIdentifier = "repoCell"
-    static let viewTitle = "Repos"
-    static let tabBarImage = "homekit"
+    static let viewTitle = "Repositories"
+    static let tabBarImage = "note.text"
     static let errorAlertTitle = "Error"
     static let errorButtonTitle = "Retry"
     static let searchPlaceholder = "Search .."
+    static let darkColor = "darkColor"
+    static let starImage = "star.fill"
+    static let circleImage = "circle.fill"
 }
